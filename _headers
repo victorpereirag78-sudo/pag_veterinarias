@@ -1,0 +1,22 @@
+/*
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: DENY
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=()
+
+# La página y sus estilos/scripts no llevan hash en el nombre:
+# se revalidan siempre para que los cambios se vean al instante.
+/
+  Cache-Control: no-cache
+/index.html
+  Cache-Control: no-cache
+/styles.css
+  Cache-Control: no-cache
+/script.js
+  Cache-Control: no-cache
+
+# Imágenes: caché de un día.
+/*.png
+  Cache-Control: public, max-age=86400
+/*.svg
+  Cache-Control: public, max-age=86400

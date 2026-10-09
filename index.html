@@ -1,0 +1,769 @@
+<!DOCTYPE html>
+<html lang="es-CL" class="no-js">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>ARM Veterinaria + Mi Mascota | Software para veterinarias en Chile</title>
+<meta name="description" content="Ficha clínica, agenda y reserva online, hospitalización, caja, inventario y boleta electrónica en un solo sistema. Y Mi Mascota, la app que conecta a cada dueño con tu clínica. Demo gratis.">
+<meta name="theme-color" content="#0D9488">
+
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_CL">
+<meta property="og:title" content="ARM Veterinaria + Mi Mascota">
+<meta property="og:description" content="Tu clínica en orden y tus pacientes siempre de vuelta: software veterinario completo + la app que conecta a cada dueño con tu clínica.">
+<meta property="og:image" content="og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="ARM Veterinaria + Mi Mascota: tu clínica en orden, tus pacientes siempre de vuelta.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="ARM Veterinaria + Mi Mascota">
+<meta name="twitter:image" content="og-image.png">
+<meta name="twitter:description" content="Tu clínica en orden y tus pacientes siempre de vuelta: software veterinario completo + la app que conecta a cada dueño con tu clínica.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<a class="skip-link" href="#contenido">Saltar al contenido</a>
+
+<!-- ================= HEADER ================= -->
+<header class="header" id="header">
+  <div class="container header-inner">
+    <a href="#top" class="logo" aria-label="ARM Veterinaria, ir al inicio">
+      <img src="favicon.svg" alt="" class="logo-mark" width="38" height="38">
+      <span class="logo-text">
+        <span class="logo-name">ARM <strong>Veterinaria</strong></span>
+        <span class="logo-sub">+ Mi Mascota</span>
+      </span>
+    </a>
+    <nav class="nav" aria-label="Principal">
+      <a href="#veterinaria">Para tu clínica</a>
+      <a href="#mi-mascota">Mi Mascota</a>
+      <a href="#ecosistema">Cómo se conectan</a>
+      <a href="#planes">Planes</a>
+      <a href="#preguntas">Preguntas</a>
+    </nav>
+    <button type="button" class="btn btn-primary btn-sm nav-cta js-open-demo">Pedir demo gratis</button>
+    <button type="button" class="menu-toggle" id="menuToggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobileNav">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <nav class="mobile-nav" id="mobileNav" aria-label="Menú móvil">
+    <a href="#veterinaria">Para tu clínica</a>
+    <a href="#mi-mascota">Mi Mascota</a>
+    <a href="#ecosistema">Cómo se conectan</a>
+    <a href="#planes">Planes</a>
+    <a href="#preguntas">Preguntas</a>
+    <button type="button" class="btn btn-primary js-open-demo">Pedir demo gratis</button>
+  </nav>
+</header>
+
+<main id="top">
+
+<!-- ================= HERO ================= -->
+<section class="hero" id="contenido">
+  <div class="hero-bg" aria-hidden="true">
+    <div class="glow glow-1"></div>
+    <div class="glow glow-2"></div>
+    <div class="hero-dots"></div>
+  </div>
+  <div class="container hero-inner">
+    <div class="hero-copy">
+      <p class="eyebrow reveal"><span class="eyebrow-dot"></span>Software veterinario + app para dueños</p>
+      <h1 class="hero-title reveal">Tu clínica en orden.<br><span class="texto-degradado">Tus pacientes, siempre de vuelta.</span></h1>
+      <p class="hero-subtitle reveal">ARM Veterinaria reúne ficha clínica, agenda, hospitalización, caja e inventario en un solo sistema. Y con <strong>Mi Mascota</strong>, cada dueño lleva en su celular la salud de su mascota, conectada con tu clínica.</p>
+      <div class="hero-actions reveal">
+        <button type="button" class="btn btn-primary btn-lg js-open-demo">Pedir demo gratis</button>
+        <a href="#veterinaria" class="btn btn-ghost btn-lg">Ver cómo funciona</a>
+      </div>
+      <ul class="hero-points reveal">
+        <li>Importamos tus clientes y mascotas desde Excel</li>
+        <li>Te acompañamos en la puesta en marcha</li>
+        <li>Pagas cuando todo está funcionando</li>
+      </ul>
+    </div>
+
+    <div class="hero-visual reveal" aria-hidden="true">
+      <!-- Panel de la clínica -->
+      <div class="mock-window" id="mockPanel">
+        <div class="mock-bar"><i></i><i></i><i></i><span>vet.armsistemas.cl</span></div>
+        <div class="mock-body">
+          <aside class="mock-side">
+            <span class="ms-logo"></span>
+            <span class="ms-item on" data-icon="inicio"></span>
+            <span class="ms-item" data-icon="agenda"></span>
+            <span class="ms-item" data-icon="paciente"></span>
+            <span class="ms-item" data-icon="hospital"></span>
+            <span class="ms-item" data-icon="caja"></span>
+            <span class="ms-item" data-icon="grafico"></span>
+          </aside>
+          <div class="mock-main">
+            <div class="mm-head">
+              <div><small>Jueves · Sucursal Centro</small><b>Buen día, Dra. Rojas</b></div>
+              <span class="mm-chip">3 reservas nuevas</span>
+            </div>
+            <div class="mm-kpis">
+              <div><small>Atenciones hoy</small><b>18</b><em class="up">+12%</em></div>
+              <div><small>Ticket promedio</small><b>$32.400</b><em class="up">+6%</em></div>
+              <div><small>Internados</small><b>4</b><em>2 tareas 10:00</em></div>
+            </div>
+            <div class="mm-agenda">
+              <div class="mm-row"><span class="t">09:00</span><span class="pet">🐶</span><span class="n">Luna · Control vacuna</span><span class="st ok">Atendida</span></div>
+              <div class="mm-row"><span class="t">09:30</span><span class="pet">🐱</span><span class="n">Michi · Consulta</span><span class="st now">En atención</span></div>
+              <div class="mm-row"><span class="t">10:00</span><span class="pet">🐶</span><span class="n">Toby · Cirugía</span><span class="st wait">Consentimiento firmado</span></div>
+              <div class="mm-row"><span class="t">10:30</span><span class="pet">🐰</span><span class="n">Copito · Online</span><span class="st new">Reservó en app</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- App Mi Mascota -->
+      <div class="mock-phone" id="mockPhone">
+        <div class="phone-notch"></div>
+        <div class="phone-screen">
+          <div class="ph-top"><small>Mi Mascota</small><span class="ph-bell">🔔</span></div>
+          <div class="ph-pet">
+            <span class="ph-avatar">🐶</span>
+            <div><b>Luna</b><small>Golden · 3 años</small></div>
+          </div>
+          <div class="ph-notif">
+            <span class="ph-notif-ic">💉</span>
+            <div><b>Antirrábica en 5 días</b><small>Clínica ARM · Centro</small></div>
+          </div>
+          <button class="ph-btn" tabindex="-1">Reservar hora</button>
+          <div class="ph-mini">
+            <div><small>Plan Salud</small><b>1 consulta disponible</b></div>
+            <div class="ph-bar"><i style="width:50%"></i></div>
+          </div>
+          <div class="ph-tabs"><span class="on">Inicio</span><span>Carpeta</span><span>Agenda</span></div>
+        </div>
+      </div>
+
+      <div class="float-card fc-1"><span>✅</span> Recordatorio enviado por WhatsApp</div>
+      <div class="float-card fc-2"><span>✍️</span> Presupuesto aceptado en la app</div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FRANJA ================= -->
+<section class="strip" aria-label="Lo que incluye">
+  <div class="container strip-inner">
+    <span><i data-icon="ficha"></i>Ficha clínica completa</span>
+    <span><i data-icon="calendario"></i>Reserva online 24/7</span>
+    <span><i data-icon="whatsapp"></i>Avisos por WhatsApp</span>
+    <span><i data-icon="sucursal"></i>Multisucursal</span>
+    <span><i data-icon="ia"></i>Asistente con IA</span>
+    <span><i data-icon="boleta"></i>Boleta y factura electrónica</span>
+  </div>
+</section>
+
+<!-- ================= PROBLEMAS ================= -->
+<section class="section" id="problemas">
+  <div class="container">
+    <div class="section-head center reveal">
+      <p class="eyebrow">¿Te suena?</p>
+      <h2>Atender bien no debería costar tanto trabajo extra.</h2>
+      <p class="section-lead">Cuando la clínica crece, el papel, el Excel y el WhatsApp personal dejan de alcanzar. Y lo que se pierde no son solo horas: son pacientes que no vuelven.</p>
+    </div>
+    <div class="pain-grid">
+      <article class="pain-card reveal">
+        <span class="pain-ic" data-icon="papel"></span>
+        <h3>La ficha está en tres lugares</h3>
+        <p>Carpetas, un sistema antiguo y notas sueltas. Encontrar la última vacuna toma más tiempo que aplicarla.</p>
+        <p class="pain-fix">Una sola ficha por paciente, en todas tus sucursales.</p>
+      </article>
+      <article class="pain-card reveal">
+        <span class="pain-ic" data-icon="olvido"></span>
+        <h3>Clientes que se olvidan de volver</h3>
+        <p>Vacunas, controles y desparasitaciones que vencen sin que nadie avise. Cada olvido es una atención menos.</p>
+        <p class="pain-fix">Recordatorios automáticos por app, WhatsApp y correo.</p>
+      </article>
+      <article class="pain-card reveal">
+        <span class="pain-ic" data-icon="chat"></span>
+        <h3>Recepción pegada al teléfono</h3>
+        <p>Confirmar horas, reagendar, enviar presupuestos y perseguir respuestas. Todo a mano, todo el día.</p>
+        <p class="pain-fix">El dueño reserva, confirma y acepta desde Mi Mascota.</p>
+      </article>
+      <article class="pain-card reveal">
+        <span class="pain-ic" data-icon="caja"></span>
+        <h3>No sabes cuánto ganas realmente</h3>
+        <p>Stock que vence en la bodega, cajas que no cuadran y cero visibilidad de qué servicio deja más.</p>
+        <p class="pain-fix">Caja por turno con arqueo, inventario por lote e indicadores al día.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ================= ARM VETERINARIA: MÓDULOS ================= -->
+<section class="section section-soft" id="veterinaria">
+  <div class="container">
+    <div class="section-head center reveal">
+      <p class="eyebrow">ARM Veterinaria · Para tu clínica</p>
+      <h2>Todo lo que pasa en tu clínica, en un solo sistema.</h2>
+      <p class="section-lead">Desde que el paciente cruza la puerta hasta que se emite la boleta. En el computador de recepción, en la tablet del box o en tu celular.</p>
+    </div>
+
+    <div class="tabs reveal" id="modTabs">
+      <div class="tab-list" role="tablist" aria-label="Áreas del sistema">
+        <button role="tab" id="tab-clinica" aria-controls="panel-clinica" aria-selected="true" tabindex="0"><i data-icon="estetoscopio"></i>Clínica</button>
+        <button role="tab" id="tab-atencion" aria-controls="panel-atencion" aria-selected="false" tabindex="-1"><i data-icon="calendario"></i>Atención y agenda</button>
+        <button role="tab" id="tab-gestion" aria-controls="panel-gestion" aria-selected="false" tabindex="-1"><i data-icon="caja"></i>Ventas e inventario</button>
+        <button role="tab" id="tab-direccion" aria-controls="panel-direccion" aria-selected="false" tabindex="-1"><i data-icon="grafico"></i>Gestión y crecimiento</button>
+        <button role="tab" id="tab-equipo" aria-controls="panel-equipo" aria-selected="false" tabindex="-1"><i data-icon="escudo"></i>Equipo y seguridad</button>
+      </div>
+
+      <div class="tab-panel" role="tabpanel" id="panel-clinica" aria-labelledby="tab-clinica">
+        <div class="tp-intro">
+          <h3>Ficha clínica completa, sin papeles</h3>
+          <p>Consulta con signos vitales, examen físico, diagnóstico y plan. Vacunas, recetas, exámenes, cirugías y documentos en la misma línea de tiempo del paciente.</p>
+        </div>
+        <ul class="feat-grid">
+          <li><b>Consulta estructurada</b><span>Anamnesis, T°, FC, FR, mucosas, hidratación, llenado capilar, condición corporal y diagnóstico diferencial.</span></li>
+          <li><b>Vacunas y desparasitaciones</b><span>Con lote y próxima dosis: el recordatorio se crea solo. Certificado de vacunación imprimible.</span></li>
+          <li><b>Recetas con folio</b><span>Imprimibles, con principio activo, dosis e indicaciones claras para el dueño.</span></li>
+          <li><b>Exámenes</b><span>Solicitado, en proceso, resultado y revisado. Resultados adjuntos en la ficha.</span></li>
+          <li><b>Cirugías y procedimientos</b><span>Anestesia, medicamentos, evolución, complicaciones y control postoperatorio.</span></li>
+          <li><b>Hospitalización con hoja de tratamiento</b><span>Tareas por hora para cada internado; quién las hizo y cuándo queda registrado.</span></li>
+          <li><b>Consentimientos informados</b><span>Cirugía, anestesia, hospitalización o eutanasia, firmados en pantalla o en la app.</span></li>
+          <li><b>Asistente con IA</b><span>Dicta la consulta y obtén un borrador de la ficha que tú revisas y apruebas.</span></li>
+        </ul>
+      </div>
+
+      <div class="tab-panel" role="tabpanel" id="panel-atencion" aria-labelledby="tab-atencion" hidden>
+        <div class="tp-intro">
+          <h3>Una agenda que se llena sola y se confirma sola</h3>
+          <p>Citas por veterinario, sala y sucursal, con duración según el servicio. Tus clientes reservan desde la app o desde tu página pública, y los avisos salen automáticamente.</p>
+        </div>
+        <ul class="feat-grid">
+          <li><b>Agenda por profesional y sala</b><span>Reservada, confirmada, en espera, en atención, atendida o no asistió, de un vistazo.</span></li>
+          <li><b>Reserva online 24/7</b><span>Desde Mi Mascota o tu página de reservas, solo en los horarios y servicios que tú habilitas.</span></li>
+          <li><b>Duraciones por servicio</b><span>Una vacuna no ocupa lo mismo que una cirugía: la agenda lo sabe y lo propone.</span></li>
+          <li><b>Recordatorios automáticos</b><span>Vacunas, controles, tratamientos y citas, sin que nadie tenga que acordarse.</span></li>
+          <li><b>WhatsApp Business oficial</b><span>Confirmación de cita con respuesta, y estado enviado, entregado y leído.</span></li>
+          <li><b>Reagendar con historial</b><span>Cada cambio queda registrado, sin perder el rastro de la cita original.</span></li>
+          <li><b>Encuesta de satisfacción</b><span>Después de cada atención, el dueño califica y comenta. Tú ves el resultado.</span></li>
+          <li><b>Búsqueda global</b><span>Por nombre, RUT, teléfono, mascota o microchip, desde cualquier pantalla.</span></li>
+        </ul>
+      </div>
+
+      <div class="tab-panel" role="tabpanel" id="panel-gestion" aria-labelledby="tab-gestion" hidden>
+        <div class="tp-intro">
+          <h3>Cobra rápido, controla el stock y cierra la caja cuadrada</h3>
+          <p>Del presupuesto a la venta sin volver a digitar. Inventario por lote y vencimiento en cada sucursal, y boleta electrónica en el mismo flujo.</p>
+        </div>
+        <ul class="feat-grid">
+          <li><b>Presupuestos</b><span>Se envían a Mi Mascota; el dueño acepta, rechaza o pide cambios. Aceptado, pasa a venta en un clic.</span></li>
+          <li><b>Ventas con varios medios de pago</b><span>Efectivo, débito, crédito y transferencia, con descuentos e IVA calculado.</span></li>
+          <li><b>Boleta y factura electrónica</b><span>Integradas con el SII a través de un proveedor autorizado, con notas de crédito.</span></li>
+          <li><b>Caja por turno con arqueo</b><span>Apertura y cierre por turno, ingresos y egresos con motivo, y cuadratura por medio de pago. Ideal para clínicas 24/7.</span></li>
+          <li><b>Inventario por lote</b><span>Sale primero lo que vence primero. Alertas de stock bajo, por vencer y vencido.</span></li>
+          <li><b>Lector de código de barras</b><span>Escanea y vende. Lo usado en la consulta se descuenta del stock automáticamente.</span></li>
+          <li><b>Compras a proveedores</b><span>Orden de compra y recepción total o parcial, que actualiza stock y costo.</span></li>
+          <li><b>Traspasos entre sucursales</b><span>Mueve un lote de una sucursal a otra con trazabilidad completa.</span></li>
+        </ul>
+      </div>
+
+      <div class="tab-panel" role="tabpanel" id="panel-direccion" aria-labelledby="tab-direccion" hidden>
+        <div class="tp-intro">
+          <h3>Decide con números, no con intuición</h3>
+          <p>Indicadores por período, sucursal y veterinario, comparados con el período anterior. Y planes de salud que te dan ingresos todos los meses.</p>
+        </div>
+        <ul class="feat-grid">
+          <li><b>Indicadores gerenciales</b><span>Ingresos, ticket promedio, atenciones, clientes nuevos y ocupación de agenda.</span></li>
+          <li><b>Retención y clientes en riesgo</b><span>Quién volvió en 12 meses y quién lleva demasiado tiempo sin venir.</span></li>
+          <li><b>Inasistencias</b><span>El porcentaje real de horas perdidas, para actuar sobre él.</span></li>
+          <li><b>Productividad y comisiones</b><span>Por veterinario, con comisiones configurables por servicio o producto.</span></li>
+          <li><b>Planes de salud</b><span>Membresías con cuota mensual o anual, servicios incluidos y descuento en el resto.</span></li>
+          <li><b>Multisucursal</b><span>Una sola ficha por paciente; agenda, caja y stock separados por sucursal.</span></li>
+          <li><b>Reportes exportables</b><span>Ventas, servicios, productos, vacunas, procedimientos y más, por sucursal o consolidados.</span></li>
+          <li><b>Satisfacción (NPS)</b><span>La opinión de tus clientes, medida y conectada a tus indicadores.</span></li>
+        </ul>
+      </div>
+
+      <div class="tab-panel" role="tabpanel" id="panel-equipo" aria-labelledby="tab-equipo" hidden>
+        <div class="tp-intro">
+          <h3>Cada uno ve lo que le corresponde</h3>
+          <p>Roles para todo tu equipo y una matriz de permisos que tú ajustas. La seguridad no depende de la pantalla: está en la base de datos.</p>
+        </div>
+        <ul class="feat-grid">
+          <li><b>Roles a tu medida</b><span>Administrador, veterinario, recepción, asistente, caja y bodega.</span></li>
+          <li><b>Matriz de permisos</b><span>Qué módulos ve y edita cada rol, editable por clínica.</span></li>
+          <li><b>Permisos por sucursal</b><span>Cada miembro trabaja en las sucursales que le asignas.</span></li>
+          <li><b>Auditoría legible</b><span>Quién cambió qué y cuándo, en lenguaje claro.</span></li>
+          <li><b>Ley 21.719 de datos personales</b><span>Consentimiento registrado, exportación y anonimización a solicitud.</span></li>
+          <li><b>Invitaciones por enlace</b><span>Suma a tu equipo en segundos, sin compartir contraseñas.</span></li>
+          <li><b>Tu marca</b><span>Logo y colores de tu clínica en el sistema y en lo que ve el dueño.</span></li>
+          <li><b>Importador de datos</b><span>Clientes, mascotas y vacunas desde Excel, con validación de RUT y sin duplicados.</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= DESTACADOS ================= -->
+<section class="section" id="destacados">
+  <div class="container">
+
+    <div class="hl reveal">
+      <div class="hl-copy">
+        <p class="eyebrow">Asistente con IA</p>
+        <h2>Atiende mirando al paciente, no a la pantalla.</h2>
+        <p>Dicta la consulta mientras examinas. ARM Veterinaria arma un borrador con motivo, anamnesis, examen, diagnóstico y plan, y prepara las indicaciones para el dueño en lenguaje simple.</p>
+        <ul class="check-list">
+          <li>Todo queda como <strong>borrador IA</strong> hasta que tú lo apruebas.</li>
+          <li>El audio no se guarda y tus datos no se usan para entrenar.</li>
+          <li>Resumen del historial de un paciente en segundos.</li>
+        </ul>
+      </div>
+      <div class="hl-visual" aria-hidden="true">
+        <div class="mock-card ia">
+          <div class="ia-rec"><span class="ia-pulse"></span>Dictando consulta · 01:42</div>
+          <p class="ia-text">“Paciente canino, 3 años, consulta por vómitos desde ayer. Mucosas rosadas, hidratación normal, abdomen sensible a la palpación…”</p>
+          <div class="ia-fields">
+            <div><small>Motivo</small><span>Vómitos de 24 h de evolución</span></div>
+            <div><small>Examen físico</small><span>Mucosas rosadas · TLLC &lt; 2 s · dolor abdominal leve</span></div>
+            <div><small>Diagnóstico presuntivo</small><span>Gastroenteritis aguda</span></div>
+          </div>
+          <div class="ia-actions"><span class="badge-ia">Borrador IA</span><span class="btn-mini">Revisar y aprobar</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hl reverse reveal">
+      <div class="hl-copy">
+        <p class="eyebrow">Hospitalización</p>
+        <h2>La hoja de tratamiento, sin pizarra ni papelitos.</h2>
+        <p>Al hospitalizar, programas medicamentos, controles, alimentación y curaciones con horario. El turno ve qué toca a cada hora para todos los internados.</p>
+        <ul class="check-list">
+          <li>Marca hecho, omitido o con observación: queda quién y cuándo.</li>
+          <li>Los medicamentos aplicados se descuentan del stock.</li>
+          <li>El dueño recibe la evolución en Mi Mascota.</li>
+        </ul>
+      </div>
+      <div class="hl-visual" aria-hidden="true">
+        <div class="mock-card sheet">
+          <div class="sheet-head"><b>Hoja de tratamiento</b><small>Hoy · 4 internados</small></div>
+          <div class="sheet-grid">
+            <span></span><span class="h">08:00</span><span class="h">10:00</span><span class="h">12:00</span><span class="h">14:00</span>
+            <span class="p">🐶 Toby</span><span class="c ok">✓</span><span class="c ok">✓</span><span class="c due">●</span><span class="c"></span>
+            <span class="p">🐱 Nala</span><span class="c ok">✓</span><span class="c obs">!</span><span class="c due">●</span><span class="c due">●</span>
+            <span class="p">🐶 Rocky</span><span class="c ok">✓</span><span class="c"></span><span class="c due">●</span><span class="c"></span>
+            <span class="p">🐱 Oliver</span><span class="c skip">–</span><span class="c ok">✓</span><span class="c"></span><span class="c due">●</span>
+          </div>
+          <div class="sheet-legend"><span><i class="ok"></i>Hecho</span><span><i class="obs"></i>Observación</span><span><i class="due"></i>Pendiente</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hl reveal">
+      <div class="hl-copy">
+        <p class="eyebrow">Indicadores</p>
+        <h2>Sabes cuánto ganas, quién no volvió y por qué.</h2>
+        <p>Ticket promedio, retención, inasistencias y productividad por veterinario, por sucursal y comparados con el período anterior. Lo que antes era una intuición, ahora es un número.</p>
+        <ul class="check-list">
+          <li>Lista de clientes en riesgo para recuperarlos a tiempo.</li>
+          <li>Comisiones calculadas solas, sin planillas.</li>
+          <li>Reportes por sucursal o consolidados de toda la empresa.</li>
+        </ul>
+      </div>
+      <div class="hl-visual" aria-hidden="true">
+        <div class="mock-card kpi">
+          <div class="kpi-row">
+            <div><small>Ingresos del mes</small><b>$8,4 M</b><em class="up">▲ 14%</em></div>
+            <div><small>Retención 12 m</small><b>71%</b><em class="up">▲ 5 pts</em></div>
+            <div><small>Inasistencias</small><b>6%</b><em class="down">▼ 3 pts</em></div>
+          </div>
+          <div class="kpi-chart">
+            <span style="--h:42%"></span><span style="--h:55%"></span><span style="--h:48%"></span><span style="--h:63%"></span><span style="--h:58%"></span><span style="--h:72%"></span><span style="--h:69%"></span><span style="--h:84%" class="on"></span>
+          </div>
+          <div class="kpi-foot"><span>Mar</span><span>Abr</span><span>May</span><span>Jun</span><span>Jul</span><span>Ago</span><span>Sep</span><span>Oct</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hl reverse reveal">
+      <div class="hl-copy">
+        <p class="eyebrow">Planes de salud</p>
+        <h2>Ingresos todos los meses, clientes que no se van.</h2>
+        <p>Crea membresías con cuota mensual o anual: consultas incluidas, vacunas del año y descuento en todo lo demás. Al cobrar, el sistema aplica lo incluido y el descuento solo.</p>
+        <ul class="check-list">
+          <li>El dueño ve en Mi Mascota lo que le queda de su plan.</li>
+          <li>Aviso automático de vencimiento y renovación.</li>
+          <li>La consulta incluida se cobra en $0, sin cálculos a mano.</li>
+        </ul>
+      </div>
+      <div class="hl-visual" aria-hidden="true">
+        <div class="mock-card plan">
+          <div class="plan-head"><span class="plan-badge">Plan Salud Anual</span><small>Vigente hasta 10/2027</small></div>
+          <div class="plan-pet"><span>🐶</span><div><b>Luna</b><small>Golden retriever</small></div></div>
+          <div class="plan-item"><span>Consultas</span><div class="plan-bar"><i style="width:50%"></i></div><b>1 de 2</b></div>
+          <div class="plan-item"><span>Vacunas anuales</span><div class="plan-bar"><i style="width:100%"></i></div><b>Incluidas</b></div>
+          <div class="plan-item"><span>Desparasitación</span><div class="plan-bar"><i style="width:75%"></i></div><b>3 de 4</b></div>
+          <div class="plan-disc">15% de descuento en todo lo demás</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ================= MI MASCOTA ================= -->
+<section class="section section-warm" id="mi-mascota">
+  <div class="container">
+    <div class="mm-hero">
+      <div class="mm-hero-copy reveal">
+        <p class="eyebrow eyebrow-coral">Mi Mascota · La app para tus clientes</p>
+        <h2>La app que hace que tus clientes vuelvan.</h2>
+        <p class="section-lead left">Mi Mascota pone la salud de cada mascota en el celular de su dueño, con tu clínica siempre presente: lo que registras en la ficha le llega al instante, y desde ahí reserva, acepta y firma.</p>
+        <div class="mm-badges">
+          <span>📱 Se instala desde el navegador</span>
+          <span>🔔 Avisos push</span>
+          <span>🏥 Varias clínicas, una app</span>
+        </div>
+      </div>
+      <div class="phones reveal" aria-hidden="true">
+        <div class="mock-phone sm tilt-l">
+          <div class="phone-notch"></div>
+          <div class="phone-screen">
+            <div class="ph-top"><small>Carpeta médica</small></div>
+            <div class="ph-list">
+              <div><span class="dot teal"></span><b>Vacuna Óctuple</b><small>12 sep · Clínica ARM</small></div>
+              <div><span class="dot sky"></span><b>Consulta control</b><small>28 ago · Dra. Rojas</small></div>
+              <div><span class="dot coral"></span><b>Receta</b><small>28 ago · Omeprazol</small></div>
+              <div><span class="dot teal"></span><b>Hemograma</b><small>Resultado disponible</small></div>
+            </div>
+          </div>
+        </div>
+        <div class="mock-phone sm front">
+          <div class="phone-notch"></div>
+          <div class="phone-screen">
+            <div class="ph-top"><small>Reservar hora</small></div>
+            <div class="ph-field"><small>Mascota</small><b>🐶 Luna</b></div>
+            <div class="ph-field"><small>Servicio</small><b>Vacunación</b></div>
+            <div class="ph-slots"><span>09:30</span><span class="on">10:00</span><span>11:30</span><span>16:00</span></div>
+            <button class="ph-btn" tabindex="-1">Confirmar reserva</button>
+            <div class="ph-ok">✓ Te enviamos la confirmación</div>
+          </div>
+        </div>
+        <div class="mock-phone sm tilt-r">
+          <div class="phone-notch"></div>
+          <div class="phone-screen">
+            <div class="ph-top"><small>Presupuesto</small></div>
+            <div class="ph-quote">
+              <div><span>Cirugía + anestesia</span><b>$180.000</b></div>
+              <div><span>Exámenes previos</span><b>$35.000</b></div>
+              <div><span>Hospitalización 1 día</span><b>$40.000</b></div>
+              <div class="tot"><span>Total</span><b>$255.000</b></div>
+            </div>
+            <div class="ph-two"><span class="no">Pedir cambios</span><span class="si">Aceptar</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="mm-groups">
+      <div class="mm-group reveal">
+        <h3><span class="mm-tag teal">Conectada con tu clínica</span></h3>
+        <ul class="mm-list">
+          <li><i data-icon="ficha"></i><div><b>Carpeta médica</b><span>Consultas, vacunas, recetas y exámenes que tú marcas como visibles, siempre al día.</span></div></li>
+          <li><i data-icon="calendario"></i><div><b>Reserva de horas</b><span>Elige mascota, servicio, sucursal y horario libre, sin llamar.</span></div></li>
+          <li><i data-icon="campana"></i><div><b>Avisos en vivo</b><span>Recordatorios de vacunas y controles, y la evolución de su mascota hospitalizada.</span></div></li>
+          <li><i data-icon="presupuesto"></i><div><b>Presupuestos</b><span>Los revisa con calma, y acepta, rechaza o pide cambios desde el celular.</span></div></li>
+          <li><i data-icon="firma"></i><div><b>Consentimientos</b><span>Firma en pantalla antes de la cirugía; queda guardado en la ficha.</span></div></li>
+          <li><i data-icon="corazon"></i><div><b>Su plan de salud</b><span>Ve lo que incluye, lo que ya usó y cuándo vence.</span></div></li>
+        </ul>
+      </div>
+      <div class="mm-group reveal">
+        <h3><span class="mm-tag coral">Para el día a día del dueño</span></h3>
+        <ul class="mm-list">
+          <li><i data-icon="libro"></i><div><b>Historia de vida</b><span>Peso, alimentación, diario con fotos, gastos y línea de vida de su mascota.</span></div></li>
+          <li><i data-icon="qr"></i><div><b>QR de collar</b><span>Quien la encuentre escanea y ve cómo contactar al dueño y su ficha SOS.</span></div></li>
+          <li><i data-icon="alerta"></i><div><b>Mascota perdida</b><span>Activa una alerta y el mismo QR muestra el aviso para compartir.</span></div></li>
+          <li><i data-icon="pasaporte"></i><div><b>Pasaporte digital</b><span>Comparte un enlace temporal con lo que elija: viajes, guarderías o paseadores.</span></div></li>
+          <li><i data-icon="sos"></i><div><b>Modo emergencia</b><span>Veterinarias cercanas en el mapa y su ubicación para compartir, en un toque.</span></div></li>
+          <li><i data-icon="familia"></i><div><b>Compartida con la familia</b><span>Todos en casa ven la misma información y reciben los mismos avisos.</span></div></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= ECOSISTEMA ================= -->
+<section class="section section-dark" id="ecosistema">
+  <div class="container">
+    <div class="section-head center reveal">
+      <p class="eyebrow eyebrow-light">Cómo se conectan</p>
+      <h2>Un círculo que trae al paciente de vuelta.</h2>
+      <p class="section-lead">Tu clínica y Mi Mascota comparten la misma información en tiempo real. Lo que registras se convierte en un aviso, y el aviso, en una nueva atención.</p>
+    </div>
+    <ol class="loop reveal">
+      <li><span class="loop-n">1</span><b>Atiendes</b><p>Registras la consulta, la vacuna y su próxima dosis en la ficha.</p></li>
+      <li><span class="loop-n">2</span><b>Mi Mascota avisa</b><p>El dueño ve la carpeta médica y recibe el recordatorio en su celular o por WhatsApp.</p></li>
+      <li><span class="loop-n">3</span><b>El dueño reserva</b><p>Elige un horario libre en la app. La cita aparece en tu agenda, ya confirmada.</p></li>
+      <li><span class="loop-n">4</span><b>Vuelve a tu clínica</b><p>Una atención más, un cliente más fiel, y el círculo comienza de nuevo.</p></li>
+    </ol>
+    <p class="loop-note reveal">Los datos clínicos viven en tu clínica: el dueño solo ve lo que marcas como visible para él.</p>
+  </div>
+</section>
+
+<!-- ================= UN DÍA ================= -->
+<section class="section" id="un-dia">
+  <div class="container">
+    <div class="section-head center reveal">
+      <p class="eyebrow">Un día con ARM Veterinaria</p>
+      <h2>Así se ve una jornada cuando todo está conectado.</h2>
+    </div>
+    <ol class="timeline">
+      <li class="reveal"><span class="tl-time">08:00</span><div><b>Ronda de internados</b><p>La hoja de tratamiento muestra las tareas de cada paciente. El turno marca lo hecho y el stock se descuenta solo.</p></div></li>
+      <li class="reveal"><span class="tl-time">09:00</span><div><b>Recepción abre la agenda</b><p>Tres horas nuevas reservadas anoche desde Mi Mascota, ya confirmadas por WhatsApp.</p></div></li>
+      <li class="reveal"><span class="tl-time">10:30</span><div><b>Consulta dictada</b><p>La IA arma el borrador de la ficha; la doctora lo revisa, emite la receta y registra la vacuna. El próximo recordatorio queda programado.</p></div></li>
+      <li class="reveal"><span class="tl-time">13:00</span><div><b>Presupuesto de cirugía</b><p>Se envía a la app. El dueño lo acepta y firma el consentimiento desde su casa.</p></div></li>
+      <li class="reveal"><span class="tl-time">17:00</span><div><b>Cobro en un clic</b><p>El presupuesto aceptado pasa a venta, el plan de salud aplica su descuento y sale la boleta electrónica.</p></div></li>
+      <li class="reveal"><span class="tl-time">20:00</span><div><b>Cuadratura de cierre de turno</b><p>La caja del turno cuadra por medio de pago y el equipo que entra recibe a los internados con su hoja de tratamiento al día. La clínica sigue atendiendo, 24/7.</p></div></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ================= PLANES ================= -->
+<section class="section section-soft" id="planes">
+  <div class="container">
+    <div class="section-head center reveal">
+      <p class="eyebrow">Planes</p>
+      <h2>Un plan a la medida del tamaño de tu clínica.</h2>
+      <p class="section-lead">Todos incluyen Mi Mascota para tus clientes, puesta en marcha acompañada e importación de tus datos. El cobro comienza cuando todo está funcionando.</p>
+    </div>
+    <div class="price-grid">
+      <article class="price-card reveal">
+        <h3>Consultorio</h3>
+        <p class="price-desc">Para el veterinario independiente o el consultorio que parte.</p>
+        <ul class="price-feats">
+          <li>1 sucursal</li>
+          <li>Ficha clínica completa y recetas</li>
+          <li>Agenda y reserva online</li>
+          <li>Recordatorios automáticos</li>
+          <li>Ventas y caja</li>
+          <li>Mi Mascota para tus clientes</li>
+        </ul>
+        <button type="button" class="btn btn-outline js-open-demo" data-plan="Consultorio">Cotizar este plan</button>
+      </article>
+      <article class="price-card featured reveal">
+        <span class="price-tag">Más elegido</span>
+        <h3>Clínica</h3>
+        <p class="price-desc">Para la clínica con equipo, pabellón y hospitalización.</p>
+        <ul class="price-feats">
+          <li>Todo lo de Consultorio, más:</li>
+          <li>Hospitalización con hoja de tratamiento</li>
+          <li>Inventario por lote, compras y presupuestos</li>
+          <li>Indicadores y comisiones</li>
+          <li>Planes de salud para tus clientes</li>
+          <li>Roles y permisos por equipo</li>
+        </ul>
+        <button type="button" class="btn btn-primary js-open-demo" data-plan="Clínica">Cotizar este plan</button>
+      </article>
+      <article class="price-card reveal">
+        <h3>Red de clínicas</h3>
+        <p class="price-desc">Para empresas con varias sucursales que operan como una sola.</p>
+        <ul class="price-feats">
+          <li>Todo lo de Clínica, más:</li>
+          <li>Sucursales ilimitadas, una sola ficha</li>
+          <li>Traspasos de stock entre sucursales</li>
+          <li>Reportes por sucursal y consolidados</li>
+          <li>Permisos por sucursal</li>
+          <li>Acompañamiento prioritario</li>
+        </ul>
+        <button type="button" class="btn btn-outline js-open-demo" data-plan="Red de clínicas">Cotizar este plan</button>
+      </article>
+    </div>
+    <div class="addons reveal">
+      <p class="addons-title">Potencia tu plan con</p>
+      <div class="addons-row">
+        <span><i data-icon="whatsapp"></i>WhatsApp Business oficial</span>
+        <span><i data-icon="ia"></i>Asistente con IA</span>
+        <span><i data-icon="boleta"></i>Boleta y factura electrónica</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CÓMO PARTIMOS ================= -->
+<section class="section" id="partimos">
+  <div class="container">
+    <div class="section-head center reveal">
+      <p class="eyebrow">Cómo partimos</p>
+      <h2>No empiezas desde cero. Y no estás solo.</h2>
+      <p class="section-lead">Nosotros nos encargamos de la puesta en marcha. Tú sigues atendiendo.</p>
+    </div>
+    <ol class="steps">
+      <li class="reveal"><span class="step-n">1</span><b>Demo gratis</b><p>Te mostramos el sistema y la app funcionando con una clínica de ejemplo.</p></li>
+      <li class="reveal"><span class="step-n">2</span><b>Traemos tus datos</b><p>Importamos tus clientes, mascotas y vacunas desde Excel, sin duplicados.</p></li>
+      <li class="reveal"><span class="step-n">3</span><b>Configuramos tu clínica</b><p>Sucursales, equipo, servicios, precios, horarios y tu marca.</p></li>
+      <li class="reveal"><span class="step-n">4</span><b>Capacitamos al equipo</b><p>Recepción, veterinarios y caja aprenden lo suyo, con acompañamiento.</p></li>
+      <li class="reveal accent"><span class="step-n">5</span><b>Recién ahí pagas</b><p>El cobro comienza cuando todo está implementado y funcionando.</p></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ================= CONFIANZA ================= -->
+<section class="section section-soft" id="confianza">
+  <div class="container">
+    <div class="section-head center reveal">
+      <p class="eyebrow">Tranquilidad</p>
+      <h2>Los datos de tus pacientes, bien cuidados.</h2>
+    </div>
+    <div class="trust-grid">
+      <article class="trust-card reveal"><span class="trust-ic" data-icon="escudo"></span><h3>Cada clínica, aislada</h3><p>Ninguna clínica puede ver datos de otra. El aislamiento está en la base de datos y se prueba en cada cambio.</p></article>
+      <article class="trust-card reveal"><span class="trust-ic" data-icon="ojo"></span><h3>El dueño ve lo que tú decides</h3><p>Cada registro clínico tiene su visibilidad. Las notas internas se quedan en la clínica.</p></article>
+      <article class="trust-card reveal"><span class="trust-ic" data-icon="historial"></span><h3>Nada se borra en silencio</h3><p>Los registros se anulan con motivo y todo cambio queda en la auditoría.</p></article>
+      <article class="trust-card reveal"><span class="trust-ic" data-icon="nube"></span><h3>En la nube, en todas partes</h3><p>Funciona en el computador, la tablet y el celular, con respaldo continuo. Sin servidores en tu clínica.</p></article>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PREGUNTAS ================= -->
+<section class="section" id="preguntas">
+  <div class="container container-narrow">
+    <div class="section-head center reveal">
+      <p class="eyebrow">Preguntas frecuentes</p>
+      <h2>Lo que más nos preguntan.</h2>
+    </div>
+    <div class="faq reveal">
+      <details>
+        <summary>¿Tengo que instalar algo?</summary>
+        <p>No. ARM Veterinaria funciona desde el navegador en cualquier computador, tablet o celular. Mi Mascota se instala en el celular del dueño directamente desde el navegador, sin pasar por tiendas de aplicaciones.</p>
+      </details>
+      <details>
+        <summary>Ya tengo mis fichas en otro sistema o en Excel. ¿Las pierdo?</summary>
+        <p>No. Importamos tus clientes, mascotas, vacunas y antecedentes desde Excel o CSV, validando RUT y detectando duplicados por RUT, teléfono o microchip. Si algo no queda bien, la importación se puede deshacer.</p>
+      </details>
+      <details>
+        <summary>Tengo más de una sucursal. ¿Sirve?</summary>
+        <p>Sí. El paciente tiene una sola ficha y se atiende en cualquier sucursal. La agenda, la caja, el stock y la hospitalización se manejan por sucursal, y los reportes se ven por sucursal o consolidados.</p>
+      </details>
+      <details>
+        <summary>¿Emite boleta y factura electrónica?</summary>
+        <p>Sí, a través de un proveedor autorizado por el SII, con boletas, facturas y notas de crédito desde el mismo flujo de venta.</p>
+      </details>
+      <details>
+        <summary>¿La IA reemplaza el criterio del veterinario?</summary>
+        <p>Nunca. La IA solo propone un borrador que queda marcado como tal hasta que el veterinario lo revisa y aprueba. El audio del dictado no se guarda y los datos no se usan para entrenar modelos.</p>
+      </details>
+      <details>
+        <summary>¿Qué pasa con los clientes que no quieren usar la app?</summary>
+        <p>Siguen recibiendo sus recordatorios y confirmaciones por WhatsApp o correo. Mi Mascota suma beneficios, pero no es obligatoria para atenderse.</p>
+      </details>
+      <details>
+        <summary>¿Cumple con la ley de datos personales?</summary>
+        <p>Sí. Se registra el consentimiento de tratamiento de datos (Ley 21.719) y puedes exportar los datos de un cliente o anonimizarlos a su solicitud, con registro en la auditoría.</p>
+      </details>
+      <details>
+        <summary>¿Cuánto demora la puesta en marcha?</summary>
+        <p>Pocos días. Depende de cuántos datos traigas y cuántas sucursales tengas, pero lo hacemos contigo, paso a paso, y el cobro empieza solo cuando todo funciona.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CTA FINAL ================= -->
+<section class="cta-final" id="contacto">
+  <div class="glow glow-cta" aria-hidden="true"></div>
+  <div class="container cta-inner reveal">
+    <h2>Dale a tu clínica el sistema que tus pacientes merecen.</h2>
+    <p>Ordena tu clínica, conecta con cada dueño y haz que vuelvan. Te mostramos todo funcionando en una demo gratis.</p>
+    <div class="hero-actions center">
+      <button type="button" class="btn btn-white btn-lg js-open-demo">Pedir demo gratis</button>
+      <a href="https://wa.me/56934039462?text=Hola%2C%20quiero%20saber%20m%C3%A1s%20de%20ARM%20Veterinaria%20y%20Mi%20Mascota." target="_blank" rel="noopener" class="btn btn-ghost-light btn-lg">Escribir por WhatsApp</a>
+    </div>
+    <a href="mailto:victor.pereira@armsistemas.cl" class="cta-email">victor.pereira@armsistemas.cl</a>
+  </div>
+</section>
+
+</main>
+
+<!-- ================= FOOTER ================= -->
+<footer class="footer">
+  <div class="container footer-inner">
+    <div class="footer-brand">
+      <a href="#top" class="logo">
+        <img src="favicon.svg" alt="" class="logo-mark" width="38" height="38">
+        <span class="logo-text"><span class="logo-name">ARM <strong>Veterinaria</strong></span><span class="logo-sub">+ Mi Mascota</span></span>
+      </a>
+      <p>Una solución de ARM Sistemas. Creamos el software que tu empresa necesita.</p>
+    </div>
+    <div class="footer-links">
+      <div class="footer-col">
+        <h4>Producto</h4>
+        <a href="#veterinaria">ARM Veterinaria</a>
+        <a href="#mi-mascota">Mi Mascota</a>
+        <a href="#planes">Planes</a>
+        <a href="#preguntas">Preguntas</a>
+      </div>
+      <div class="footer-col">
+        <h4>ARM Sistemas</h4>
+        <a href="https://armsistemas.cl/" target="_blank" rel="noopener">Sitio web</a>
+        <a href="https://www.instagram.com/armsistemas.cl" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://mascotas.armsistemas.cl/" target="_blank" rel="noopener">Entrar a Mi Mascota</a>
+      </div>
+      <div class="footer-col">
+        <h4>Contacto</h4>
+        <a href="mailto:victor.pereira@armsistemas.cl">victor.pereira@armsistemas.cl</a>
+        <a href="https://wa.me/56934039462" target="_blank" rel="noopener">WhatsApp +56 9 3403 9462</a>
+      </div>
+    </div>
+  </div>
+  <div class="container footer-bottom">
+    <span>© <span id="anio">2026</span> ARM Sistemas. Todos los derechos reservados.</span>
+  </div>
+</footer>
+
+<!-- ================= MODAL: PEDIR DEMO ================= -->
+<div class="modal-overlay" id="demoOverlay" hidden>
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="demoTitulo">
+    <button type="button" class="modal-close" id="demoCerrar" aria-label="Cerrar">&times;</button>
+    <h3 id="demoTitulo">Pide tu demo gratis</h3>
+    <p class="modal-sub">Déjanos tus datos y te escribimos por WhatsApp para coordinarla.</p>
+    <form id="demoForm" novalidate>
+      <label class="field">Nombre de la clínica
+        <input type="text" name="clinica" required autocomplete="organization">
+      </label>
+      <label class="field">Tu nombre
+        <input type="text" name="contacto" required autocomplete="name">
+      </label>
+      <label class="field">WhatsApp
+        <input type="tel" name="telefono" required placeholder="+56 9 1234 5678" autocomplete="tel">
+      </label>
+      <div class="field-row">
+        <label class="field">Sucursales
+          <select name="sucursales">
+            <option>1</option>
+            <option>2 a 3</option>
+            <option>4 o más</option>
+          </select>
+        </label>
+        <label class="field">Plan de interés
+          <select name="plan" id="demoPlan">
+            <option>Consultorio</option>
+            <option>Clínica</option>
+            <option>Red de clínicas</option>
+            <option selected>Aún no lo sé</option>
+          </select>
+        </label>
+      </div>
+      <p class="form-error" id="demoError" role="alert" hidden>Completa el nombre de la clínica, tu nombre y tu WhatsApp.</p>
+      <button type="submit" class="btn btn-primary btn-block">Enviar solicitud por WhatsApp</button>
+    </form>
+  </div>
+</div>
+
+<a href="https://wa.me/56934039462?text=Hola%2C%20quiero%20saber%20m%C3%A1s%20de%20ARM%20Veterinaria." target="_blank" rel="noopener" class="whatsapp-float" aria-label="Hablar por WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor" width="28" height="28" aria-hidden="true"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.16-.17.2-.35.22-.64.08-.3-.15-1.26-.46-2.39-1.48-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.6.13-.14.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.6-.92-2.2-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.21 3.07c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.7.63.71.22 1.36.19 1.87.12.57-.09 1.76-.72 2-1.41.25-.7.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35zM12.05 21.8h-.01a9.87 9.87 0 0 1-5.03-1.38l-.36-.21-3.74.98 1-3.65-.24-.37a9.86 9.86 0 0 1-1.51-5.26c0-5.45 4.44-9.88 9.89-9.88 2.64 0 5.12 1.03 6.99 2.9a9.82 9.82 0 0 1 2.89 6.99c0 5.45-4.44 9.88-9.88 9.88zm8.41-18.3A11.82 11.82 0 0 0 12.05 0C5.5 0 .16 5.34.16 11.89c0 2.1.55 4.14 1.59 5.94L.06 24l6.3-1.65a11.88 11.88 0 0 0 5.68 1.45h.01c6.55 0 11.89-5.34 11.89-11.89 0-3.18-1.24-6.16-3.48-8.41z"/></svg>
+</a>
+
+<script src="script.js"></script>
+</body>
+</html>
