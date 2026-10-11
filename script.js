@@ -12,6 +12,7 @@ if (!location.hash) window.scrollTo(0, 0);
 
 // ---- Iconos lineales (24×24, trazo) ----
 const ICONOS = {
+  tijera: '<circle cx="6" cy="6" r="2.6"/><circle cx="6" cy="18" r="2.6"/><path d="M8.2 7.5L20 18M8.2 16.5L20 6" stroke-linecap="round"/>',
   inicio: '<path d="M4 11l8-7 8 7v8a1 1 0 0 1-1 1h-4v-6h-6v6H5a1 1 0 0 1-1-1z" stroke-linejoin="round"/>',
   agenda: '<rect x="4" y="5" width="16" height="15" rx="2"/><path d="M4 9h16M8 3v4M16 3v4" stroke-linecap="round"/>',
   calendario: '<rect x="4" y="5" width="16" height="15" rx="2"/><path d="M4 9h16M8 3v4M16 3v4" stroke-linecap="round"/><path d="M9 14l2 2 4-4" stroke-linecap="round" stroke-linejoin="round"/>',
@@ -177,7 +178,7 @@ form.addEventListener('submit', (e) => {
 
   const lineas = [
     'Hola, quiero pedir una demo gratis de ARM Veterinaria + Mi Mascota.',
-    `Clínica: ${valor('clinica')}`,
+    `Negocio: ${valor('clinica')} (${valor('tipo')})`,
     `Contacto: ${valor('contacto')}`,
     `WhatsApp: ${valor('telefono')}`,
     `Sucursales: ${valor('sucursales')}`,
@@ -187,6 +188,78 @@ form.addEventListener('submit', (e) => {
   form.reset();
   cerrarDemo();
 });
+
+// ---- Planes: precios en vivo desde ARM Veterinaria ----
+// Se leen de la base (vet_pub_planes, sin sesión) para que un cambio de
+// precio en el panel de la plataforma se vea aquí sin publicar la página.
+// Si la consulta falla, quedan los precios escritos en el HTML.
+const SUPABASE_URL = 'https://rhggndoqjnlzmfxsllto.supabase.co';
+// Clave pública (anon) del panel: solo permite lo que las políticas abren a cualquiera.
+const SUPABASE_ANON = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJoZ2duZG9xam5sem1meHNsbHRvIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzgwNDE5MTIsImV4cCI6MjA5MzYxNzkxMn0.sEJIK0dtWsjwf_KUBII_QQYWuoLUvoNTGXxUUEzwhCE';
+
+const clp = (n) => '$' + Math.round(n).toLocaleString('es-CL');
+const ufTxt = (n) => n.toLocaleString('es-CL', { minimumFractionDigits: 2, maximumFractionDigits: 4 }) + ' UF';
+// Respaldo (los mismos valores del HTML) mientras responde la base o si falla.
+let datosPlanes = {
+  iva_pct: 19, uf: null,
+  planes: [
+    { codigo: 'basico', nombre: 'Básico', precio_mensual: 20000, precio_anual: 200000, max_sucursales: 1, max_usuarios: 3 },
+    { codigo: 'profesional', nombre: 'Profesional', precio_mensual: 44990, precio_anual: 449900, max_sucursales: 2, max_usuarios: 8 },
+    { codigo: 'clinica', nombre: 'Clínica', precio_mensual: 79990, precio_anual: 799900, max_sucursales: null, max_usuarios: null },
+  ],
+};
+let periodo = 'mensual';
+
+const pintarPlanes = () => {
+  const { planes, iva_pct: iva, uf } = datosPlanes;
+  planes.forEach((p) => {
+    const card = document.querySelector(`.price-card[data-plan="${p.codigo}"]`);
+    if (!card) return;
+    const set = (campo, texto) => { const el = card.querySelector(`[data-campo="${campo}"]`); if (el) el.textContent = texto; };
+    const neto = periodo === 'anual' ? p.precio_anual : p.precio_mensual;
+    const total = neto * (1 + iva / 100);
+    set('nombre', p.nombre);
+    if (p.descripcion) set('descripcion', p.descripcion);
+    set('precio', clp(neto));
+    set('unidad', periodo === 'anual' ? 'año' : 'mes');
+    set('detalle', `${clp(total)} IVA incluido${uf ? ` · ${ufTxt(neto / uf.valor)} hoy` : ''}`);
+    set('sedes', p.max_sucursales == null ? 'Sedes sin tope' : p.max_sucursales === 1 ? '1 sede' : `Hasta ${p.max_sucursales} sedes`);
+    set('usuarios', p.max_usuarios == null ? 'Usuarios sin tope' : `Hasta ${p.max_usuarios} usuarios`);
+  });
+  const ufHoy = document.getElementById('ufHoy');
+  if (ufHoy && uf) {
+    const [a, m, d] = uf.fecha.split('-');
+    ufHoy.textContent = `Valor UF al ${d}-${m}-${a}: $${Number(uf.valor).toLocaleString('es-CL', { minimumFractionDigits: 2 })}.`;
+  }
+  // "2 meses gratis" solo si el anual realmente lo es (según el primer plan).
+  const p0 = planes[0];
+  const etiqueta = document.querySelector('.periodo [data-periodo="anual"] em');
+  if (p0 && etiqueta) {
+    const meses = Math.round(12 - p0.precio_anual / p0.precio_mensual);
+    etiqueta.textContent = meses >= 1 ? `${meses} ${meses === 1 ? 'mes' : 'meses'} gratis` : '';
+  }
+};
+
+document.querySelectorAll('.periodo button').forEach((b) => {
+  b.addEventListener('click', () => {
+    periodo = b.dataset.periodo;
+    document.querySelectorAll('.periodo button').forEach((x) => {
+      x.classList.toggle('on', x === b);
+      x.setAttribute('aria-pressed', String(x === b));
+    });
+    pintarPlanes();
+  });
+});
+pintarPlanes();
+
+fetch(`${SUPABASE_URL}/rest/v1/rpc/vet_pub_planes`, {
+  method: 'POST',
+  headers: { apikey: SUPABASE_ANON, Authorization: `Bearer ${SUPABASE_ANON}`, 'Content-Type': 'application/json' },
+  body: '{}',
+})
+  .then((r) => (r.ok ? r.json() : Promise.reject(r.status)))
+  .then((d) => { if (d && Array.isArray(d.planes) && d.planes.length) { datosPlanes = d; pintarPlanes(); } })
+  .catch(() => { /* quedan los precios del HTML */ });
 
 // ---- Parallax suave en los mockups del hero (solo escritorio) ----
 const panel = document.getElementById('mockPanel');
