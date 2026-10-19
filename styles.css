@@ -718,3 +718,24 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
   .periodo button { padding: 8px 14px; font-size: 14px; }
   .price-amount { font-size: 32px; }
 }
+
+/* ================================================================
+   Ecosistema ARM — cross-promotion
+   ================================================================ */
+.arm-eco{padding:80px 0;background:var(--oscuro);border-top:1px solid rgba(255,255,255,.08)}
+.eco-grid{display:grid;gap:16px;grid-template-columns:repeat(3,1fr);max-width:900px;margin:48px auto 0}
+.eco-card{display:flex;flex-direction:column;align-items:center;gap:10px;padding:24px 16px;border-radius:var(--radio);background:var(--oscuro-2);border:1px solid rgba(255,255,255,.08);text-decoration:none;color:#fff;transition:all .3s ease}
+.eco-card:hover{border-color:var(--primario);transform:translateY(-4px);box-shadow:0 8px 30px rgb(13 148 136/.15)}
+.eco-icon{width:48px;height:48px;border-radius:12px;display:flex;align-items:center;justify-content:center;background:rgb(13 148 136/.15);color:var(--primario)}
+.eco-icon svg{width:24px;height:24px}
+.eco-name{font-weight:700;font-size:.9rem;text-align:center}
+.eco-desc{color:var(--tinta-tenue);font-size:.78rem;text-align:center;line-height:1.4}
+@media(max-width:768px){.eco-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:480px){.eco-grid{gap:12px}}
+
+.footer-arm{padding:32px 0 16px;border-top:1px solid var(--borde);background:var(--fondo)}
+.footer-arm-inner{display:flex;flex-direction:column;align-items:center;gap:16px;text-align:center}
+.footer-arm-label{color:var(--tinta-suave);font-size:.82rem;font-weight:500}
+.footer-arm-logo{max-width:200px;margin:0 auto}
+.footer-arm-link{font-size:.85rem;font-weight:600;color:var(--primario);text-decoration:none}
+.footer-arm-link:hover{text-decoration:underline}
