@@ -203,9 +203,9 @@ const ufTxt = (n) => n.toLocaleString('es-CL', { minimumFractionDigits: 2, maxim
 let datosPlanes = {
   iva_pct: 19, uf: null,
   planes: [
-    { codigo: 'basico', nombre: 'Básico', precio_mensual: 20000, precio_anual: 200000, max_sucursales: 1, max_usuarios: 3 },
-    { codigo: 'profesional', nombre: 'Profesional', precio_mensual: 44990, precio_anual: 449900, max_sucursales: 2, max_usuarios: 8 },
-    { codigo: 'clinica', nombre: 'Clínica', precio_mensual: 79990, precio_anual: 799900, max_sucursales: null, max_usuarios: null },
+    { codigo: 'basico', nombre: 'Básico', precio_mensual: 15990, precio_anual: 159900, max_sucursales: 1, max_usuarios: 2 },
+    { codigo: 'profesional', nombre: 'Profesional', precio_mensual: 22990, precio_anual: 229900, max_sucursales: 2, max_usuarios: 8 },
+    { codigo: 'clinica', nombre: 'Clínica', precio_mensual: 35990, precio_anual: 359900, max_sucursales: null, max_usuarios: null },
   ],
 };
 let periodo = 'mensual';
@@ -223,8 +223,12 @@ const pintarPlanes = () => {
     set('precio', clp(neto));
     set('unidad', periodo === 'anual' ? 'año' : 'mes');
     set('detalle', `${clp(total)} IVA incluido${uf ? ` · ${ufTxt(neto / uf.valor)} hoy` : ''}`);
-    set('sedes', p.max_sucursales == null ? 'Sedes sin tope' : p.max_sucursales === 1 ? '1 sede' : `Hasta ${p.max_sucursales} sedes`);
-    set('usuarios', p.max_usuarios == null ? 'Usuarios sin tope' : `Hasta ${p.max_usuarios} usuarios`);
+    set('sedes', p.max_sucursales == null ? 'Sedes ilimitadas' : p.max_sucursales === 1 ? '1 sede' : `Hasta ${p.max_sucursales} sedes`);
+    set('usuarios', p.max_usuarios == null ? 'Usuarios ilimitados (sin límite de equipo)' : `Hasta ${p.max_usuarios} usuarios`);
+    if (p.max_storage_mb) {
+      const gb = Math.round(p.max_storage_mb / 1024);
+      set('almacenamiento', `${gb} GB de almacenamiento en la nube`);
+    }
   });
   const ufHoy = document.getElementById('ufHoy');
   if (ufHoy && uf) {
@@ -236,7 +240,7 @@ const pintarPlanes = () => {
   const etiqueta = document.querySelector('.periodo [data-periodo="anual"] em');
   if (p0 && etiqueta) {
     const meses = Math.round(12 - p0.precio_anual / p0.precio_mensual);
-    etiqueta.textContent = meses >= 1 ? `${meses} ${meses === 1 ? 'mes' : 'meses'} gratis` : '';
+    etiqueta.textContent = meses >= 1 ? `Ahorra ${meses} ${meses === 1 ? 'mes' : 'meses'}` : '';
   }
 };
 

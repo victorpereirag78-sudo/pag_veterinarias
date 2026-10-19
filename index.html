@@ -259,7 +259,7 @@
         <ul class="feat-grid">
           <li><b>Presupuestos</b><span>Se envían a Mi Mascota; el dueño acepta, rechaza o pide cambios. Aceptado, pasa a venta en un clic.</span></li>
           <li><b>Ventas con varios medios de pago</b><span>Efectivo, débito, crédito y transferencia, con descuentos e IVA calculado.</span></li>
-          <li><b>Boleta y factura electrónica <em class="pronto">Pendiente</em></b><span>Hoy cada venta registra el tipo de documento y el folio que emites con tu sistema actual.</span></li>
+          <li><b>Boleta y factura electrónica</b><span>Integración con Lioren para emitir boletas y facturas electrónicas directamente desde el sistema.</span></li>
           <li><b>Caja por turno con arqueo</b><span>Apertura y cierre por turno, ingresos y egresos con motivo, y cuadratura por medio de pago. Ideal para clínicas 24/7.</span></li>
           <li><b>Inventario por lote</b><span>Sale primero lo que vence primero. Alertas de stock bajo, por vencer y vencido.</span></li>
           <li><b>Lector de código de barras</b><span>Escanea y vende. Lo usado en la consulta se descuenta del stock automáticamente.</span></li>
@@ -590,21 +590,20 @@
     </div>
     <div class="periodo reveal" role="group" aria-label="Período de pago">
       <button type="button" class="on" data-periodo="mensual" aria-pressed="true">Mensual</button>
-      <button type="button" data-periodo="anual" aria-pressed="false">Anual <em>2 meses gratis</em></button>
+      <button type="button" data-periodo="anual" aria-pressed="false">Anual <em>Ahorra 2 meses</em></button>
     </div>
     <!-- Los precios se leen de la base (vet_pub_planes): los de abajo son el respaldo si no responde. -->
     <div class="price-grid" id="planesGrid">
       <article class="price-card reveal" data-plan="basico">
         <h3 data-campo="nombre">Básico</h3>
-        <p class="price-desc" data-campo="descripcion">Para la consulta que parte: una sede y un equipo pequeño.</p>
-        <p class="price-amount"><span data-campo="precio">$20.000</span> <small>+ IVA / <span data-campo="unidad">mes</span></small></p>
+        <p class="price-desc" data-campo="descripcion">Para consultas o profesionales independientes.</p>
+        <p class="price-amount"><span data-campo="precio">$15.990</span> <small>+ IVA / <span data-campo="unidad">mes</span></small></p>
         <p class="price-sub" data-campo="detalle">&nbsp;</p>
         <ul class="price-feats">
           <li data-campo="sedes">1 sede</li>
-          <li data-campo="usuarios">Hasta 3 usuarios</li>
-          <li>Todas las funciones</li>
-          <li>Mi Mascota para tus clientes</li>
-          <li>Importación de datos y puesta en marcha</li>
+          <li data-campo="usuarios">Hasta 2 usuarios</li>
+          <li data-campo="almacenamiento">2 GB de almacenamiento en la nube</li>
+          <li>Todas las funciones y App Mi Mascota incluidas</li>
         </ul>
         <a href="https://arm-veterinaria.pages.dev/registro" class="btn btn-outline">Probar 30 días gratis</a>
         <button type="button" class="price-link js-open-demo" data-plan="Básico">Prefiero que me contacten</button>
@@ -612,30 +611,28 @@
       <article class="price-card featured reveal" data-plan="profesional">
         <span class="price-tag">Más elegido</span>
         <h3 data-campo="nombre">Profesional</h3>
-        <p class="price-desc" data-campo="descripcion">Para la clínica que crece: hasta dos sedes.</p>
-        <p class="price-amount"><span data-campo="precio">$44.990</span> <small>+ IVA / <span data-campo="unidad">mes</span></small></p>
+        <p class="price-desc" data-campo="descripcion">Para clínicas en crecimiento con equipo mediano.</p>
+        <p class="price-amount"><span data-campo="precio">$22.990</span> <small>+ IVA / <span data-campo="unidad">mes</span></small></p>
         <p class="price-sub" data-campo="detalle">&nbsp;</p>
         <ul class="price-feats">
           <li data-campo="sedes">Hasta 2 sedes</li>
           <li data-campo="usuarios">Hasta 8 usuarios</li>
-          <li>Todas las funciones</li>
-          <li>Mi Mascota para tus clientes</li>
-          <li>Importación de datos y puesta en marcha</li>
+          <li data-campo="almacenamiento">10 GB de almacenamiento en la nube</li>
+          <li>Todas las funciones y App Mi Mascota incluidas</li>
         </ul>
         <a href="https://arm-veterinaria.pages.dev/registro" class="btn btn-primary">Probar 30 días gratis</a>
         <button type="button" class="price-link js-open-demo" data-plan="Profesional">Prefiero que me contacten</button>
       </article>
       <article class="price-card reveal" data-plan="clinica">
         <h3 data-campo="nombre">Clínica</h3>
-        <p class="price-desc" data-campo="descripcion">Varias sedes y equipo sin tope.</p>
-        <p class="price-amount"><span data-campo="precio">$79.990</span> <small>+ IVA / <span data-campo="unidad">mes</span></small></p>
+        <p class="price-desc" data-campo="descripcion">El plan definitivo para centros médicos y multisucursales.</p>
+        <p class="price-amount"><span data-campo="precio">$35.990</span> <small>+ IVA / <span data-campo="unidad">mes</span></small></p>
         <p class="price-sub" data-campo="detalle">&nbsp;</p>
         <ul class="price-feats">
-          <li data-campo="sedes">Sedes sin tope</li>
-          <li data-campo="usuarios">Usuarios sin tope</li>
-          <li>Todas las funciones</li>
-          <li>Mi Mascota para tus clientes</li>
-          <li>Importación de datos y puesta en marcha</li>
+          <li data-campo="sedes">Sedes ilimitadas</li>
+          <li data-campo="usuarios">Usuarios ilimitados (sin límite de equipo)</li>
+          <li data-campo="almacenamiento">35 GB de almacenamiento en la nube</li>
+          <li>Todas las funciones y App Mi Mascota incluidas</li>
         </ul>
         <a href="https://arm-veterinaria.pages.dev/registro" class="btn btn-outline">Probar 30 días gratis</a>
         <button type="button" class="price-link js-open-demo" data-plan="Clínica">Prefiero que me contacten</button>
@@ -646,10 +643,14 @@
       y las mensualidades o anualidades siguientes se cobran en esa cantidad de UF, al valor de la UF del día de pago, más IVA.
       Pago por transferencia. <span id="ufHoy"></span>
     </p>
+    <p class="price-note reveal">
+      💡 ¿Necesitas más espacio para radiografías o ecografías? Todos nuestros planes cuentan con almacenamiento flexible y pueden ampliarse en cualquier momento según las necesidades de tu clínica.
+    </p>
     <div class="addons reveal">
-      <p class="addons-title">Pendiente</p>
+      <p class="addons-title">Integraciones incluidas</p>
       <div class="addons-row">
-        <span><i data-icon="boleta"></i>Boleta y factura electrónica</span>
+        <span><i data-icon="boleta"></i>Factura electrónica y boletas a través de Lioren</span>
+        <span><i data-icon="whatsapp"></i>Mensajería por WhatsApp</span>
       </div>
     </div>
   </div>
@@ -723,11 +724,11 @@
       </details>
       <details>
         <summary>¿Emite boleta y factura electrónica?</summary>
-        <p>Todavía no: la integración con el SII está pendiente. Mientras tanto, sigues emitiendo con tu sistema actual y cada venta registra el tipo de documento y el folio.</p>
+        <p>Sí, a través de nuestra integración con Lioren. Emites boletas y facturas electrónicas directamente desde el sistema, sin necesidad de un software externo.</p>
       </details>
       <details>
         <summary>¿Y si un cliente todavía no tiene la app?</summary>
-        <p>Puede atenderse igual, y sus avisos le llegan por correo mientras tanto. Pero la idea es que todos se sumen: la clínica los invita con un enlace o un QR, la app se instala en segundos sin pasar por tiendas y es donde reciben todo lo de su mascota.</p>
+        <p>Puede atenderse igual, y sus avisos le llegan por correo o por WhatsApp mientras tanto. Pero la idea es que todos se sumen: la clínica los invita con un enlace o un QR, la app se instala en segundos sin pasar por tiendas y es donde reciben todo lo de su mascota.</p>
       </details>
       <details>
         <summary>¿Cumple con la ley de datos personales?</summary>
