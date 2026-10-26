@@ -42,6 +42,8 @@ const ICONOS = {
   familia: '<circle cx="8" cy="7" r="2.6"/><circle cx="16" cy="7" r="2.6"/><path d="M3 19c0-3 2.2-5.5 5-5.5s5 2.5 5 5.5M13 15.2c.8-1 1.8-1.7 3-1.7 2.8 0 5 2.5 5 5.5" stroke-linecap="round"/>',
   ojo: '<path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z" stroke-linejoin="round"/><circle cx="12" cy="12" r="3"/>',
   historial: '<path d="M3 12a9 9 0 1 0 3-6.7L3 8" stroke-linecap="round" stroke-linejoin="round"/><path d="M3 3v5h5M12 7v5l3 2" stroke-linecap="round" stroke-linejoin="round"/>',
+  perfil: '<circle cx="12" cy="8" r="3.6"/><path d="M5 20c.8-3.6 3.6-5.5 7-5.5s6.2 1.9 7 5.5" stroke-linecap="round"/>',
+  ruta: '<path d="M12 21s-6.5-5.6-6.5-10.8a6.5 6.5 0 0 1 13 0C18.5 15.4 12 21 12 21z" stroke-linejoin="round"/><circle cx="12" cy="10.2" r="2.3"/>',
   nube: '<path d="M7 18a5 5 0 0 1-.5-9.97A6 6 0 0 1 18 8a4.5 4.5 0 0 1-.5 10z" stroke-linejoin="round"/><path d="M9.5 13l2 2 3.5-3.5" stroke-linecap="round" stroke-linejoin="round"/>',
 };
 
@@ -206,6 +208,8 @@ let datosPlanes = {
     { codigo: 'basico', nombre: 'Básico', precio_mensual: 15990, precio_anual: 159900, max_sucursales: 1, max_usuarios: 2 },
     { codigo: 'profesional', nombre: 'Profesional', precio_mensual: 22990, precio_anual: 229900, max_sucursales: 2, max_usuarios: 8 },
     { codigo: 'clinica', nombre: 'Clínica', precio_mensual: 35990, precio_anual: 359900, max_sucursales: null, max_usuarios: null },
+    { codigo: 'peluqueria', nombre: 'Peluquería', precio_mensual: 9990, precio_anual: 99900, max_sucursales: 1, max_usuarios: 3 },
+    { codigo: 'movil', nombre: 'Veterinario a domicilio', precio_mensual: 14990, precio_anual: 149900, max_sucursales: 1, max_usuarios: 2 },
   ],
 };
 let periodo = 'mensual';
@@ -243,6 +247,18 @@ const pintarPlanes = () => {
     etiqueta.textContent = meses >= 1 ? `Ahorra ${meses} ${meses === 1 ? 'mes' : 'meses'}` : '';
   }
 };
+
+// Tipo de negocio: muestra los planes de la clínica, la peluquería o el veterinario a domicilio.
+const mostrarPerfil = (perfil) => {
+  document.querySelectorAll('.perfil-tabs button').forEach((x) => {
+    const activo = x.dataset.perfil === perfil;
+    x.classList.toggle('on', activo);
+    x.setAttribute('aria-pressed', String(activo));
+  });
+  document.querySelectorAll('.price-grid[data-perfil]').forEach((g) => { g.hidden = g.dataset.perfil !== perfil; });
+};
+document.querySelectorAll('.perfil-tabs button').forEach((b) => b.addEventListener('click', () => mostrarPerfil(b.dataset.perfil)));
+document.querySelectorAll('[data-ver-planes]').forEach((a) => a.addEventListener('click', () => mostrarPerfil(a.dataset.verPlanes)));
 
 document.querySelectorAll('.periodo button').forEach((b) => {
   b.addEventListener('click', () => {

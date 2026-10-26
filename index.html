@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>ARM Veterinaria + Mi Mascota | Software para veterinarias y peluquerías de mascotas en Chile</title>
-<meta name="description" content="Ficha clínica, agenda y reserva online, peluquería, hospitalización, caja e inventario en un solo sistema. Y Mi Mascota, la app que conecta a cada dueño con tu negocio. 30 días gratis.">
+<title>ARM Veterinaria + Mi Mascota | Software para veterinarias, peluquerías y veterinarios a domicilio en Chile</title>
+<meta name="description" content="Software para clínicas veterinarias, peluquerías de mascotas y veterinarios a domicilio: agenda, ficha clínica, ruta del día, caja, boletas de honorarios y Mi Mascota, la app que conecta a cada dueño con tu negocio. 30 días gratis.">
 <meta name="theme-color" content="#0D9488">
 
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
@@ -45,6 +45,7 @@
     <nav class="nav" aria-label="Principal">
       <a href="#veterinaria">Para tu clínica</a>
       <a href="#peluqueria">Peluquerías</a>
+      <a href="#domicilio">A domicilio</a>
       <a href="#mi-mascota">Mi Mascota</a>
       <a href="#planes">Planes</a>
       <a href="#preguntas">Preguntas</a>
@@ -57,6 +58,7 @@
   <nav class="mobile-nav" id="mobileNav" aria-label="Menú móvil">
     <a href="#veterinaria">Para tu clínica</a>
     <a href="#peluqueria">Peluquerías</a>
+    <a href="#domicilio">A domicilio</a>
     <a href="#mi-mascota">Mi Mascota</a>
     <a href="#planes">Planes</a>
     <a href="#preguntas">Preguntas</a>
@@ -75,15 +77,16 @@
   </div>
   <div class="container hero-inner">
     <div class="hero-copy">
-      <p class="eyebrow reveal"><span class="eyebrow-dot"></span>Para veterinarias y peluquerías de mascotas</p>
+      <p class="eyebrow reveal"><span class="eyebrow-dot"></span>Para clínicas, peluquerías y veterinarios a domicilio</p>
       <h1 class="hero-title reveal">Tu clínica en orden.<br><span class="texto-degradado">Tus pacientes, siempre de vuelta.</span></h1>
-      <p class="hero-subtitle reveal">ARM Veterinaria reúne ficha clínica, agenda, peluquería, hospitalización, caja e inventario en un solo sistema. Y con <strong>Mi Mascota</strong>, toda la comunicación con cada dueño pasa por una sola app: recordatorios, citas, presupuestos y resultados, directo en su celular.</p>
+      <p class="hero-subtitle reveal">Un solo sistema, a la medida de cómo trabajas: <strong>clínica</strong> con ficha, hospitalización, caja e inventario; <strong>peluquería</strong> con agenda y tarifas por tamaño; o <strong>veterinario a domicilio</strong> con ruta del día, ingresos y boletas. Y con <strong>Mi Mascota</strong>, cada dueño recibe recordatorios, citas y resultados directo en su celular.</p>
       <div class="hero-actions reveal">
         <a href="https://arm-veterinaria.pages.dev/registro" class="btn btn-primary btn-lg">Probar 30 días gratis</a>
         <button type="button" class="btn btn-ghost btn-lg js-open-demo">Pedir una demo</button>
       </div>
       <ul class="hero-points reveal">
         <li>30 días gratis, sin tarjeta de crédito</li>
+        <li>Funciona en el celular y en el computador</li>
         <li>Importamos tus clientes y mascotas desde Excel</li>
         <li>Te acompañamos en la puesta en marcha</li>
       </ul>
@@ -123,25 +126,48 @@
         </div>
       </div>
 
-      <!-- App Mi Mascota -->
-      <div class="mock-phone" id="mockPhone">
+      <!-- App Mi Mascota (inicio, como se ve en el celular del dueño) -->
+      <div class="mock-phone app" id="mockPhone">
         <div class="phone-notch"></div>
-        <div class="phone-screen">
-          <div class="ph-top"><small>Mi Mascota</small><span class="ph-bell">🔔</span></div>
-          <div class="ph-pet">
-            <span class="ph-avatar">🐶</span>
-            <div><b>Luna</b><small>Golden · 3 años</small></div>
+        <div class="phone-screen app-screen">
+          <div class="pa-top"><span class="pa-menu"><i></i><i></i><i></i></span><b>Inicio</b><span class="pa-user">Camila Soto</span></div>
+          <div class="pa-hola"><b>Hola, Camila 👋</b><small>Lunes, 26 de octubre</small></div>
+          <div class="pa-sos">🚨 Emergencia Veterinaria</div>
+          <div class="pa-conectar">
+            <p><span>🏥</span> ¿Tu veterinaria usa ARM Veterinaria?<br><b>Conéctate con tu código</b> y ve aquí su historial.</p>
+            <em>Conectar →</em>
           </div>
-          <div class="ph-notif">
-            <span class="ph-notif-ic">💉</span>
-            <div><b>Antirrábica en 5 días</b><small>Clínica ARM · Centro</small></div>
+          <div class="pa-accesos">
+            <span><i>📅</i>Agendar hora</span>
+            <span><i>🗓️</i>Mis horas</span>
+            <span><i>🧪</i>Resultados</span>
+            <span><i>📄</i>Recetas</span>
+            <span><i>🩺</i>Historia clínica</span>
+            <span><i>💉</i>Vacunas</span>
+            <span><i>⏰</i>Recordatorio</span>
+            <span><i>👨‍👩‍👧</i>Compartir</span>
           </div>
-          <button class="ph-btn" tabindex="-1">Reservar hora</button>
-          <div class="ph-mini">
-            <div><small>Plan Salud</small><b>1 consulta disponible</b></div>
-            <div class="ph-bar"><i style="width:50%"></i></div>
+          <div class="pa-sec"><b>Mi mascota</b><em>+ Agregar mascota</em></div>
+          <div class="pa-pet">
+            <span class="pa-foto"><b>🐶</b></span>
+            <div class="pa-pet-info">
+              <b>Luna</b><small>Golden · Hembra</small>
+              <div class="pa-datos">
+                <div><small>EDAD</small><b>3 años, 4 meses</b></div>
+                <div><small>EDAD HUMANA</small><b>28 años</b></div>
+                <div><small>PESO</small><b>22 kg</b></div>
+                <div><small>CUMPLEAÑOS</small><b>en 120 días</b></div>
+              </div>
+            </div>
           </div>
-          <div class="ph-tabs"><span class="on">Inicio</span><span>Carpeta</span><span>Agenda</span></div>
+          <nav class="pa-nav" aria-hidden="true">
+            <span class="on"><i data-icon="inicio"></i>Inicio</span>
+            <span><i data-icon="paciente"></i>Mascotas</span>
+            <span><i data-icon="hospital"></i>Veterinaria</span>
+            <span><i data-icon="agenda"></i>Agenda</span>
+            <span><i data-icon="perfil"></i>Perfil</span>
+            <span><i data-icon="familia"></i>Compartir</span>
+          </nav>
         </div>
       </div>
 
@@ -158,8 +184,60 @@
     <span><i data-icon="calendario"></i>Reserva online 24/7</span>
     <span><i data-icon="campana"></i>Avisos directo en la app</span>
     <span><i data-icon="tijera"></i>Peluquería de mascotas</span>
-    <span><i data-icon="sucursal"></i>Multisucursal</span>
+    <span><i data-icon="ruta"></i>Veterinario a domicilio</span>
     <span><i data-icon="caja"></i>Caja e inventario</span>
+  </div>
+</section>
+
+<!-- ================= TRES FORMAS DE TRABAJAR ================= -->
+<section class="section section-soft" id="tipos">
+  <div class="container">
+    <div class="section-head center reveal">
+      <p class="eyebrow">Elige cómo trabajas</p>
+      <h2>Un sistema, tres formas de usarlo.</h2>
+      <p class="section-lead">Cada tipo de negocio entra directo a lo que necesita, sin menús que no usa. Tú eliges al registrarte, tiene su propio plan, y los tres se conectan con la app Mi Mascota de tus clientes.</p>
+    </div>
+    <div class="tipo-grid">
+      <article class="tipo-card reveal">
+        <span class="tipo-ic" data-icon="hospital"></span>
+        <h3>Clínica veterinaria</h3>
+        <p class="tipo-for">Para clínicas, hospitales y consultas con equipo.</p>
+        <ul class="tipo-list">
+          <li>Ficha clínica, vacunas, recetas y exámenes</li>
+          <li>Hospitalización con hoja de tratamiento</li>
+          <li>Agenda por profesional y sala, multisucursal</li>
+          <li>Caja con arqueo, inventario por lote y compras</li>
+          <li>Indicadores, comisiones y planes de salud</li>
+        </ul>
+        <a href="#veterinaria" class="tipo-link">Ver lo que incluye →</a>
+      </article>
+      <article class="tipo-card reveal">
+        <span class="tipo-ic" data-icon="tijera"></span>
+        <h3>Peluquería de mascotas</h3>
+        <p class="tipo-for">Para peluquerías y estéticas caninas y felinas.</p>
+        <ul class="tipo-list">
+          <li>Agenda con duración por servicio y reserva online</li>
+          <li>Ficha con preferencias de corte de cada mascota</li>
+          <li>Tarifas por tamaño, según el peso</li>
+          <li>Caja y catálogo de productos</li>
+          <li>Celular y computador</li>
+        </ul>
+        <a href="#peluqueria" class="tipo-link">Ver peluquería →</a>
+      </article>
+      <article class="tipo-card reveal">
+        <span class="tipo-ic" data-icon="ruta"></span>
+        <h3>Veterinario a domicilio</h3>
+        <p class="tipo-for">Para quien atiende en la casa del paciente.</p>
+        <ul class="tipo-list">
+          <li>Agenda y ruta del día con dirección y mapa</li>
+          <li>Ficha clínica en el celular y recordatorios de vacunas</li>
+          <li>Pacientes por mes e ingreso diario</li>
+          <li>Planilla de boletas de honorarios y devolución de impuestos</li>
+          <li>Celular y computador</li>
+        </ul>
+        <a href="#domicilio" class="tipo-link">Ver atención a domicilio →</a>
+      </article>
+    </div>
   </div>
 </section>
 
@@ -392,30 +470,60 @@
   <div class="container">
     <div class="section-head center reveal">
       <p class="eyebrow">Peluquería de mascotas</p>
-      <h2>Baño y corte con la misma agenda, caja y app.</h2>
-      <p class="section-lead">Sirve para la clínica que suma peluquería y para la peluquería que trabaja sola. Mismo sistema, mismos planes.</p>
+      <h2>Baño, corte y estética con una agenda que no se cruza.</h2>
+      <p class="section-lead">Pensado para la peluquería que trabaja sola y también para la clínica que suma peluquería. Reserva, atiende, cobra y avisa al dueño desde el celular o el computador.</p>
     </div>
 
     <div class="hl reveal">
       <div class="hl-copy">
         <p class="eyebrow">Tu peluquería, ordenada</p>
-        <h2>Cada hora de peluquería, reservada, atendida y cobrada.</h2>
-        <p>La peluquería tiene su propio tipo de hora en la agenda, con su duración y su box de estética. El dueño la pide desde Mi Mascota o desde tu página de reservas, y tú la confirmas.</p>
+        <h2>Cada hora reservada, atendida, lista y entregada.</h2>
+        <p>La peluquería tiene su propio tipo de hora, con la duración de cada servicio. El dueño la pide desde Mi Mascota o desde tu página de reservas, y tú la confirmas. Después sigues cada orden hasta que entregas a la mascota.</p>
         <ul class="check-list">
-          <li>Cada hora con su duración: la agenda propone la de peluquería y tú la ajustas, porque un baño no ocupa lo mismo que un corte completo.</li>
+          <li>Estados de cada servicio: reservada, en proceso, lista y entregada, con un toque.</li>
+          <li>Las horas pedidas en línea quedan «por confirmar» hasta que tú las aceptas.</li>
+          <li>Horas libres del día según el horario del local, para no sobrecargar el box.</li>
           <li>Baños, cortes, shampoos y accesorios en el catálogo, cobrados en la misma caja.</li>
-          <li>La ficha de cada mascota a mano: raza, edad, peso y antecedentes, antes de empezar.</li>
-          <li>Membresías con baños incluidos usando los planes de salud.</li>
         </ul>
       </div>
       <div class="hl-visual" aria-hidden="true">
         <div class="mock-card groom">
-          <div class="sheet-head"><b>Peluquería · Hoy</b><small>Box estética</small></div>
-          <div class="groom-row"><span class="t">10:00</span><span class="pet">🐩</span><span class="n">Copo<small>Baño y corte · 90 min</small></span><span class="st new">Reservó en app</span></div>
-          <div class="groom-row"><span class="t">11:30</span><span class="pet">🐶</span><span class="n">Rocky<small>Baño medicado · 60 min</small></span><span class="st now">En atención</span></div>
-          <div class="groom-row"><span class="t">13:00</span><span class="pet">🐕</span><span class="n">Toby<small>Corte de uñas · 20 min</small></span><span class="st ok">Confirmada</span></div>
-          <div class="groom-row"><span class="t">15:00</span><span class="pet">🐱</span><span class="n">Nala<small>Deslanado · 60 min</small></span><span class="st ok">Confirmada</span></div>
-          <div class="groom-foot"><span>Cobrado hoy en peluquería</span><b>$86.500</b></div>
+          <div class="sheet-head"><b>Peluquería · Hoy</b><small>2 horas libres</small></div>
+          <div class="groom-row"><span class="t">10:00</span><span class="pet">🐩</span><span class="n">Copo<small>Baño y corte · Pequeño · 90 min</small></span><span class="st new">Por confirmar</span></div>
+          <div class="groom-row"><span class="t">11:30</span><span class="pet">🐶</span><span class="n">Rocky<small>Baño medicado · Grande · 60 min</small></span><span class="st now">En proceso</span></div>
+          <div class="groom-row"><span class="t">13:00</span><span class="pet">🐕</span><span class="n">Toby<small>Corte de uñas · Mediano · 20 min</small></span><span class="st ok">Lista</span></div>
+          <div class="groom-row"><span class="t">15:00</span><span class="pet">🐱</span><span class="n">Nala<small>Deslanado · Mini · 60 min</small></span><span class="st wait">Reservada</span></div>
+          <div class="groom-foot"><span>Dinero recibido hoy</span><b>$86.500</b></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hl reverse reveal">
+      <div class="hl-copy">
+        <p class="eyebrow">La ficha de cada mascota</p>
+        <h2>Cómo le gusta el corte, y cómo se porta.</h2>
+        <p>Cada mascota guarda sus preferencias para que cualquiera del equipo repita el mismo corte, y sepa de antemano si necesita calma, bozal o a dos personas.</p>
+        <ul class="check-list">
+          <li>Corte habitual, máquina o número, largo y productos que se usan.</li>
+          <li>Cómo se porta: tranquilo, nervioso, puede morder o entre dos.</li>
+          <li>Tarifa por tamaño: el sistema sugiere el tamaño según el peso y tú lo ajustas.</li>
+          <li>Historial de servicios de cada mascota, para ver qué se hizo y cuándo.</li>
+        </ul>
+      </div>
+      <div class="hl-visual" aria-hidden="true">
+        <div class="mock-card pref">
+          <div class="sheet-head"><b>🐩 Copo · Preferencias de corte</b><small>Poodle · 6 kg</small></div>
+          <div class="pref-grid">
+            <div><small>Corte habitual</small><b>Cachorro, patas redondas</b></div>
+            <div><small>Máquina / número</small><b>N.° 7F · largo 2 cm</b></div>
+            <div><small>Productos</small><b>Shampoo hipoalergénico</b></div>
+            <div><small>Cómo se porta</small><b><em class="tag ok">Tranquilo</em></b></div>
+          </div>
+          <div class="pref-tam">
+            <small>Tamaño para la tarifa</small>
+            <div class="tam-row"><span>Mini</span><span class="on">Pequeño</span><span>Mediano</span><span>Grande</span><span>Gigante</span></div>
+            <small class="tam-nota">Por su peso (6 kg) correspondería Pequeño.</small>
+          </div>
         </div>
       </div>
     </div>
@@ -424,12 +532,116 @@
       <article class="trust-card reveal">
         <span class="trust-ic" data-icon="estetoscopio"></span>
         <h3>¿Veterinaria con peluquería?</h3>
-        <p>La vacuna y el baño del mismo paciente quedan en la misma ficha, la misma agenda y la misma caja. Y el dueño ve todo en una sola app.</p>
+        <p>En el plan de clínica la vacuna y el baño del mismo paciente quedan en la misma ficha, la misma agenda y la misma caja. Y el dueño ve todo en una sola app.</p>
       </article>
       <article class="trust-card reveal">
         <span class="trust-ic" data-icon="tijera"></span>
         <h3>¿Peluquería independiente?</h3>
-        <p>Usas la agenda, la reserva online, la caja, el inventario y Mi Mascota. Lo clínico queda disponible por si algún día sumas un veterinario.</p>
+        <p>Tienes un plan propio, más simple y más barato: agenda, clientes, caja, catálogo y Mi Mascota, sin lo clínico que no usas. Si algún día sumas un veterinario, te pasamos al plan de clínica.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ================= VETERINARIO A DOMICILIO ================= -->
+<section class="section" id="domicilio">
+  <div class="container">
+    <div class="section-head center reveal">
+      <p class="eyebrow">Veterinario a domicilio</p>
+      <h2>Tu consulta sobre ruedas: ruta, ficha, ingresos y boletas.</h2>
+      <p class="section-lead">Hecho para quien atiende en la casa del paciente. Lo abres en el celular entre visita y visita, y revisas los números en el computador cuando quieras.</p>
+    </div>
+
+    <div class="hl reveal">
+      <div class="hl-copy">
+        <p class="eyebrow">Agenda y ruta del día</p>
+        <h2>Sabes dónde ir, a quién ver y cómo llegar.</h2>
+        <p>Cada visita lleva la dirección, la comuna, las referencias para llegar y quién te recibe, con un botón para abrirla en el mapa. Marcas cuándo sales, llegas y terminas, y desde ahí abres la ficha para atender.</p>
+        <ul class="check-list">
+          <li>Ruta de hoy y próximas visitas, con cuáles faltan por confirmar.</li>
+          <li>Anamnesis, examen, vacunas y receta en la ficha, en el mismo celular.</li>
+          <li>Antecedentes de la mascota a la vista: medicamentos habituales y alimentación.</li>
+          <li>El dueño reserva su visita desde Mi Mascota y recibe la confirmación.</li>
+        </ul>
+      </div>
+      <div class="hl-visual" aria-hidden="true">
+        <div class="mock-card ruta">
+          <div class="sheet-head"><b>Ruta de hoy</b><small>3 visitas</small></div>
+          <div class="ruta-row done"><span class="t">09:30</span><div><b>🐶 Bruno · Control</b><small>Av. Los Leones 1240, Providencia</small></div><span class="st ok">Terminada</span></div>
+          <div class="ruta-row now"><span class="t">11:00</span><div><b>🐱 Mía · Vacuna triple</b><small>Pasaje Los Olmos 85, Ñuñoa</small></div><span class="st now">En atención</span></div>
+          <div class="ruta-row"><span class="t">12:30</span><div><b>🐶 Thor · Consulta</b><small>Calle Roble 410, La Reina · Recibe: Ana</small></div><span class="st wait">Por confirmar</span></div>
+          <div class="ruta-btns"><span>🚗 Salí</span><span>📍 Llegué</span><span class="on">✓ Terminé</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hl reverse reveal">
+      <div class="hl-copy">
+        <p class="eyebrow">Tus números</p>
+        <h2>Cuántos pacientes ves al mes y cuánto ingresas cada día.</h2>
+        <p>Sin planillas aparte: el sistema cuenta mascotas atendidas, atenciones del mes y lo que va entrando por día. Y los recordatorios de vacunas y controles se programan solos con la fecha que indicas al atender.</p>
+        <ul class="check-list">
+          <li>Pacientes e ingresos del mes, comparables con meses anteriores.</li>
+          <li>Ingreso por día en un gráfico, y lo que te queda por cobrar.</li>
+          <li>Vacunas y controles próximos, con aviso al dueño por Mi Mascota.</li>
+          <li>Tu maletín al día: inventario de vacunas y medicamentos.</li>
+        </ul>
+      </div>
+      <div class="hl-visual" aria-hidden="true">
+        <div class="mock-card kpi">
+          <div class="kpi-row">
+            <div><small>Pacientes del mes</small><b>46</b><em class="up">▲ 8</em></div>
+            <div><small>Atenciones</small><b>52</b><em class="up">▲ 11%</em></div>
+            <div><small>Ingreso del mes</small><b>$1,9 M</b><em class="up">▲ 9%</em></div>
+          </div>
+          <div class="kpi-chart">
+            <span style="--h:35%"></span><span style="--h:62%"></span><span style="--h:48%"></span><span style="--h:80%"></span><span style="--h:30%"></span><span style="--h:66%"></span><span style="--h:54%"></span><span style="--h:90%" class="on"></span>
+          </div>
+          <div class="kpi-foot"><span>Lun</span><span>Mar</span><span>Mié</span><span>Jue</span><span>Vie</span><span>Sáb</span><span>Dom</span><span>Hoy</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hl reveal">
+      <div class="hl-copy">
+        <p class="eyebrow">Boletas de honorarios</p>
+        <h2>Cuánto ganas, cuánto retienen y cuánto te devuelven.</h2>
+        <p>Registras tus boletas de honorarios (a mano o importándolas) y el sistema arma la planilla del mes: bruto, retención y líquido. Con eso estima tu devolución de impuestos antes de declarar la renta.</p>
+        <ul class="check-list">
+          <li>Planilla mensual con bruto, retención y líquido de cada boleta.</li>
+          <li>La retención, con el porcentaje que tú configuras en los parámetros tributarios.</li>
+          <li>Devolución de impuestos estimada con la tabla del impuesto, con gastos presuntos o efectivos.</li>
+          <li>Es una estimación para planificar: no se conecta con el SII ni reemplaza tu declaración.</li>
+        </ul>
+      </div>
+      <div class="hl-visual" aria-hidden="true">
+        <div class="mock-card bol">
+          <div class="sheet-head"><b>Boletas · Octubre</b><small>Ejemplo</small></div>
+          <div class="bol-head"><span>Boleta</span><span>Bruto</span><span>Retención</span><span>Líquido</span></div>
+          <div class="bol-row"><span>N.° 118</span><span>$100.000</span><span>$15.250</span><span>$84.750</span></div>
+          <div class="bol-row"><span>N.° 119</span><span>$65.000</span><span>$9.913</span><span>$55.087</span></div>
+          <div class="bol-row"><span>N.° 120</span><span>$80.000</span><span>$12.200</span><span>$67.800</span></div>
+          <div class="bol-tot"><span>Total del mes</span><b>$245.000</b><b>$37.363</b><b>$207.637</b></div>
+          <div class="bol-dev"><span>Devolución de impuestos</span><b>Estimación</b></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="pelu-casos tres">
+      <article class="trust-card reveal">
+        <span class="trust-ic" data-icon="nube"></span>
+        <h3>Celular y computador</h3>
+        <p>Atiendes desde el celular en la casa del paciente y ves tus números desde el computador. Es el mismo sistema, sin instalar nada.</p>
+      </article>
+      <article class="trust-card reveal">
+        <span class="trust-ic" data-icon="campana"></span>
+        <h3>Tus pacientes vuelven</h3>
+        <p>Cada vacuna que registras deja programado su recordatorio, y le llega al dueño en Mi Mascota sin que tú tengas que acordarte.</p>
+      </article>
+      <article class="trust-card reveal">
+        <span class="trust-ic" data-icon="presupuesto"></span>
+        <h3>Un plan hecho para ti</h3>
+        <p>Ruta, ficha clínica, caja, inventario y boletas, sin hospitalización ni multisucursal que no necesitas.</p>
       </article>
     </div>
   </div>
@@ -442,41 +654,58 @@
       <div class="mm-hero-copy reveal">
         <p class="eyebrow eyebrow-coral">Mi Mascota · La app para tus clientes</p>
         <h2>La app que hace que tus clientes vuelvan.</h2>
-        <p class="section-lead left">Mi Mascota pone la salud de cada mascota en el celular de su dueño, con tu clínica siempre presente: lo que registras en la ficha le llega al instante, y desde ahí reserva, acepta y firma.</p>
+        <p class="section-lead left">Mi Mascota pone la salud de cada mascota en el celular de su dueño, con tu negocio siempre presente: lo que registras en la ficha le llega al instante, y desde ahí reserva, acepta y firma. Sirve igual si eres clínica, peluquería o veterinario a domicilio.</p>
         <div class="mm-badges">
           <span>📱 Se instala desde el navegador</span>
           <span>🔔 Todos los avisos de tu clínica</span>
           <span>🏥 Varias clínicas, una app</span>
+          <span>✂️ Peluquería y visitas a domicilio</span>
         </div>
       </div>
       <div class="phones reveal" aria-hidden="true">
         <div class="mock-phone sm tilt-l">
           <div class="phone-notch"></div>
           <div class="phone-screen">
-            <div class="ph-top"><small>Carpeta médica</small></div>
+            <div class="pa-top"><span class="pa-menu"><i></i><i></i><i></i></span><b>Historia clínica</b><span class="pa-user">Camila Soto</span></div>
             <div class="ph-list">
               <div><span class="dot teal"></span><b>Vacuna Óctuple</b><small>12 sep · Clínica ARM</small></div>
               <div><span class="dot sky"></span><b>Consulta control</b><small>28 ago · Dra. Rojas</small></div>
               <div><span class="dot coral"></span><b>Receta</b><small>28 ago · Omeprazol</small></div>
               <div><span class="dot teal"></span><b>Hemograma</b><small>Resultado disponible</small></div>
             </div>
+            <nav class="pa-nav" aria-hidden="true">
+              <span class="on"><i data-icon="inicio"></i>Inicio</span>
+              <span><i data-icon="paciente"></i>Mascotas</span>
+              <span><i data-icon="hospital"></i>Veterinaria</span>
+              <span><i data-icon="agenda"></i>Agenda</span>
+              <span><i data-icon="perfil"></i>Perfil</span>
+              <span><i data-icon="familia"></i>Compartir</span>
+            </nav>
           </div>
         </div>
         <div class="mock-phone sm front">
           <div class="phone-notch"></div>
           <div class="phone-screen">
-            <div class="ph-top"><small>Reservar hora</small></div>
+            <div class="pa-top"><span class="pa-menu"><i></i><i></i><i></i></span><b>Agendar hora</b><span class="pa-user">Camila Soto</span></div>
             <div class="ph-field"><small>Mascota</small><b>🐶 Luna</b></div>
             <div class="ph-field"><small>Servicio</small><b>Vacunación</b></div>
             <div class="ph-slots"><span>09:30</span><span class="on">10:00</span><span>11:30</span><span>16:00</span></div>
             <button class="ph-btn" tabindex="-1">Confirmar reserva</button>
             <div class="ph-ok">✓ Te enviamos la confirmación</div>
+            <nav class="pa-nav" aria-hidden="true">
+              <span class="on"><i data-icon="inicio"></i>Inicio</span>
+              <span><i data-icon="paciente"></i>Mascotas</span>
+              <span><i data-icon="hospital"></i>Veterinaria</span>
+              <span><i data-icon="agenda"></i>Agenda</span>
+              <span><i data-icon="perfil"></i>Perfil</span>
+              <span><i data-icon="familia"></i>Compartir</span>
+            </nav>
           </div>
         </div>
         <div class="mock-phone sm tilt-r">
           <div class="phone-notch"></div>
           <div class="phone-screen">
-            <div class="ph-top"><small>Presupuesto</small></div>
+            <div class="pa-top"><span class="pa-menu"><i></i><i></i><i></i></span><b>Presupuesto</b><span class="pa-user">Camila Soto</span></div>
             <div class="ph-quote">
               <div><span>Cirugía + anestesia</span><b>$180.000</b></div>
               <div><span>Exámenes previos</span><b>$35.000</b></div>
@@ -484,6 +713,14 @@
               <div class="tot"><span>Total</span><b>$255.000</b></div>
             </div>
             <div class="ph-two"><span class="no">Pedir cambios</span><span class="si">Aceptar</span></div>
+            <nav class="pa-nav" aria-hidden="true">
+              <span class="on"><i data-icon="inicio"></i>Inicio</span>
+              <span><i data-icon="paciente"></i>Mascotas</span>
+              <span><i data-icon="hospital"></i>Veterinaria</span>
+              <span><i data-icon="agenda"></i>Agenda</span>
+              <span><i data-icon="perfil"></i>Perfil</span>
+              <span><i data-icon="familia"></i>Compartir</span>
+            </nav>
           </div>
         </div>
       </div>
@@ -521,11 +758,13 @@
         <h3><span class="mm-tag teal">Conectada con tu clínica</span></h3>
         <ul class="mm-list">
           <li><i data-icon="ficha"></i><div><b>Carpeta médica</b><span>Consultas, vacunas, recetas y exámenes que tú marcas como visibles, siempre al día.</span></div></li>
+          <li><i data-icon="qr"></i><div><b>Conexión con tu código</b><span>El dueño ingresa el código que le das y ve aquí el historial que compartes con él.</span></div></li>
           <li><i data-icon="calendario"></i><div><b>Reserva de horas</b><span>Elige mascota, servicio, sucursal y horario libre, sin llamar.</span></div></li>
           <li><i data-icon="campana"></i><div><b>Avisos en vivo</b><span>Recordatorios de vacunas y controles, y la evolución de su mascota hospitalizada.</span></div></li>
           <li><i data-icon="presupuesto"></i><div><b>Presupuestos</b><span>Los revisa con calma, y acepta, rechaza o pide cambios desde el celular.</span></div></li>
           <li><i data-icon="firma"></i><div><b>Consentimientos</b><span>Firma en pantalla antes de la cirugía; queda guardado en la ficha.</span></div></li>
           <li><i data-icon="corazon"></i><div><b>Su plan de salud</b><span>Ve lo que incluye, lo que ya usó y cuándo vence.</span></div></li>
+          <li><i data-icon="boleta"></i><div><b>Productos para retirar</b><span>Reserva alimento o accesorios que tú publicas y los retira en el local, sin cantidades expuestas.</span></div></li>
         </ul>
       </div>
       <div class="mm-group reveal">
@@ -537,6 +776,8 @@
           <li><i data-icon="pasaporte"></i><div><b>Pasaporte digital</b><span>Comparte un enlace temporal con lo que elija: viajes, guarderías o paseadores.</span></div></li>
           <li><i data-icon="sos"></i><div><b>Modo emergencia</b><span>Veterinarias cercanas en el mapa y su ubicación para compartir, en un toque.</span></div></li>
           <li><i data-icon="familia"></i><div><b>Compartida con la familia</b><span>Todos en casa ven la misma información y reciben los mismos avisos.</span></div></li>
+          <li><i data-icon="paciente"></i><div><b>Perros, gatos y más</b><span>Aves, roedores, conejos, reptiles, caballos, cerdos y peces, cada uno con su lista de razas.</span></div></li>
+          <li><i data-icon="libro"></i><div><b>Tutorial y ayuda</b><span>Una bienvenida guiada y preguntas frecuentes, para que nadie se pierda al empezar.</span></div></li>
         </ul>
       </div>
     </div>
@@ -585,15 +826,20 @@
   <div class="container">
     <div class="section-head center reveal">
       <p class="eyebrow">Planes</p>
-      <h2>Todas las funciones en todos los planes. Solo cambia el tamaño.</h2>
-      <p class="section-lead">Veterinaria, peluquería y Mi Mascota para tus clientes en cualquier plan. Elige según cuántas sedes y usuarios necesitas. Pruébalo 30 días gratis.</p>
+      <h2>Un plan para cada tipo de negocio.</h2>
+      <p class="section-lead">Elige el tuyo: todas las funciones de tu tipo de negocio vienen en cada plan, y Mi Mascota para tus clientes siempre incluida. Pruébalo 30 días gratis.</p>
+    </div>
+    <div class="perfil-tabs reveal" role="group" aria-label="Tipo de negocio">
+      <button type="button" class="on" data-perfil="clinica" aria-pressed="true"><i data-icon="hospital"></i>Clínica</button>
+      <button type="button" data-perfil="peluqueria" aria-pressed="false"><i data-icon="tijera"></i>Peluquería</button>
+      <button type="button" data-perfil="movil" aria-pressed="false"><i data-icon="ruta"></i>Veterinario a domicilio</button>
     </div>
     <div class="periodo reveal" role="group" aria-label="Período de pago">
       <button type="button" class="on" data-periodo="mensual" aria-pressed="true">Mensual</button>
       <button type="button" data-periodo="anual" aria-pressed="false">Anual <em>Ahorra 2 meses</em></button>
     </div>
     <!-- Los precios se leen de la base (vet_pub_planes): los de abajo son el respaldo si no responde. -->
-    <div class="price-grid" id="planesGrid">
+    <div class="price-grid" id="planesGrid" data-perfil="clinica">
       <article class="price-card reveal" data-plan="basico">
         <h3 data-campo="nombre">Básico</h3>
         <p class="price-desc" data-campo="descripcion">Para consultas o profesionales independientes.</p>
@@ -636,6 +882,47 @@
         </ul>
         <a href="https://arm-veterinaria.pages.dev/registro" class="btn btn-outline">Probar 30 días gratis</a>
         <button type="button" class="price-link js-open-demo" data-plan="Clínica">Prefiero que me contacten</button>
+      </article>
+    </div>
+
+    <div class="price-grid solo" data-perfil="peluqueria" hidden>
+      <article class="price-card featured reveal" data-plan="peluqueria">
+        <h3 data-campo="nombre">Peluquería</h3>
+        <p class="price-desc" data-campo="descripcion">Agenda de servicios, fichas con preferencias de corte, tarifas por tamaño, caja y App Mascotas. Celular y computador.</p>
+        <p class="price-amount"><span data-campo="precio">$9.990</span> <small>+ IVA / <span data-campo="unidad">mes</span></small></p>
+        <p class="price-sub" data-campo="detalle">&nbsp;</p>
+        <ul class="price-feats">
+          <li data-campo="sedes">1 sede</li>
+          <li data-campo="usuarios">Hasta 3 usuarios</li>
+          <li data-campo="almacenamiento">2 GB de almacenamiento en la nube</li>
+          <li>Agenda, reserva online y órdenes de servicio</li>
+          <li>Preferencias de corte y tarifa por tamaño</li>
+          <li>Caja, ventas y catálogo de productos</li>
+          <li>App Mi Mascota incluida</li>
+        </ul>
+        <a href="https://arm-veterinaria.pages.dev/registro" class="btn btn-primary">Probar 30 días gratis</a>
+        <button type="button" class="price-link js-open-demo" data-plan="Peluquería">Prefiero que me contacten</button>
+      </article>
+    </div>
+
+    <div class="price-grid solo" data-perfil="movil" hidden>
+      <article class="price-card featured reveal" data-plan="movil">
+        <h3 data-campo="nombre">Veterinario a domicilio</h3>
+        <p class="price-desc" data-campo="descripcion">Agenda y ruta del día, ficha clínica, recordatorios de vacunas, ingresos y boletas de honorarios. Celular y computador.</p>
+        <p class="price-amount"><span data-campo="precio">$14.990</span> <small>+ IVA / <span data-campo="unidad">mes</span></small></p>
+        <p class="price-sub" data-campo="detalle">&nbsp;</p>
+        <ul class="price-feats">
+          <li data-campo="sedes">1 sede</li>
+          <li data-campo="usuarios">Hasta 2 usuarios</li>
+          <li data-campo="almacenamiento">2 GB de almacenamiento en la nube</li>
+          <li>Agenda y ruta del día con mapa</li>
+          <li>Ficha clínica, vacunas y recordatorios</li>
+          <li>Pacientes por mes, ingresos, caja e inventario</li>
+          <li>Boletas de honorarios y devolución de impuestos</li>
+          <li>App Mi Mascota incluida</li>
+        </ul>
+        <a href="https://arm-veterinaria.pages.dev/registro" class="btn btn-primary">Probar 30 días gratis</a>
+        <button type="button" class="price-link js-open-demo" data-plan="Veterinario a domicilio">Prefiero que me contacten</button>
       </article>
     </div>
     <p class="price-note reveal">
@@ -708,7 +995,19 @@
       </details>
       <details>
         <summary>¿Sirve para una peluquería de mascotas?</summary>
-        <p>Sí. La peluquería tiene su propio tipo de hora en la agenda, con su duración y su box, reserva online desde Mi Mascota o tu página, y sus servicios y productos se cobran en la misma caja. Sirve para la veterinaria que suma peluquería y para la peluquería independiente: lo clínico queda disponible por si algún día sumas un veterinario.</p>
+        <p>Sí, y tiene un plan propio. La peluquería tiene su propio tipo de hora en la agenda, con su duración, reserva online desde Mi Mascota o tu página, preferencias de corte por mascota, tarifa por tamaño según el peso, y caja y catálogo para cobrar. Si además tienes veterinaria, el plan de clínica trae la peluquería junto a la ficha clínica. Y si una peluquería suma un veterinario, la pasamos al plan de clínica.</p>
+      </details>
+      <details>
+        <summary>Soy veterinario a domicilio. ¿Qué me ofrece?</summary>
+        <p>Un plan hecho para atender en la casa del paciente: agenda y ruta del día con dirección y mapa, ficha clínica en el celular, recordatorios de vacunas, pacientes por mes, ingresos por día, inventario y una planilla de tus boletas de honorarios con bruto, retención y líquido. Funciona en el celular y en el computador, y tus clientes reciben todo en Mi Mascota.</p>
+      </details>
+      <details>
+        <summary>¿Las boletas de honorarios se emiten desde el sistema?</summary>
+        <p>No. Las emites en el SII como siempre y las registras en el sistema, a mano o importándolas, para armar tu planilla mensual y estimar tu devolución de impuestos. Es un cálculo de referencia que usa los parámetros tributarios que tú configuras; no se conecta con el SII ni reemplaza tu declaración de renta.</p>
+      </details>
+      <details>
+        <summary>¿Puedo cambiar de tipo de negocio más adelante?</summary>
+        <p>Sí. El tipo de negocio se elige al registrarte y cada uno tiene su plan. Si cambia tu forma de trabajar, por ejemplo una peluquería que suma un veterinario, escríbenos y hacemos el cambio.</p>
       </details>
       <details>
         <summary>¿Cuánto cuesta y cómo se paga?</summary>
@@ -746,7 +1045,7 @@
 <section class="cta-final" id="contacto">
   <div class="glow glow-cta" aria-hidden="true"></div>
   <div class="container cta-inner reveal">
-    <h2>Dale a tu clínica o peluquería el sistema que tus pacientes merecen.</h2>
+    <h2>Dale a tu clínica, peluquería o consulta a domicilio el sistema que tus pacientes merecen.</h2>
     <p>Ordena tu negocio, conecta con cada dueño y haz que vuelvan. Pruébalo 30 días gratis o pídenos una demo.</p>
     <div class="hero-actions center">
       <a href="https://arm-veterinaria.pages.dev/registro" class="btn btn-white btn-lg">Probar 30 días gratis</a>
@@ -821,6 +1120,7 @@
         <h4>Producto</h4>
         <a href="#veterinaria">ARM Veterinaria</a>
         <a href="#peluqueria">Peluquerías</a>
+        <a href="#domicilio">Veterinario a domicilio</a>
         <a href="#mi-mascota">Mi Mascota</a>
         <a href="#planes">Planes</a>
         <a href="#preguntas">Preguntas</a>
@@ -860,7 +1160,7 @@
     <h3 id="demoTitulo">Pide tu demo gratis</h3>
     <p class="modal-sub">Déjanos tus datos y te escribimos por WhatsApp para coordinarla.</p>
     <form id="demoForm" novalidate>
-      <label class="field">Nombre de tu clínica o peluquería
+      <label class="field">Nombre de tu negocio
         <input type="text" name="clinica" required autocomplete="organization">
       </label>
       <label class="field">Tipo de negocio
@@ -868,6 +1168,7 @@
           <option>Veterinaria</option>
           <option>Veterinaria con peluquería</option>
           <option>Peluquería de mascotas</option>
+          <option>Veterinario a domicilio</option>
         </select>
       </label>
       <label class="field">Tu nombre
@@ -889,6 +1190,8 @@
             <option>Básico</option>
             <option>Profesional</option>
             <option>Clínica</option>
+            <option>Peluquería</option>
+            <option>Veterinario a domicilio</option>
             <option selected>Aún no lo sé</option>
           </select>
         </label>

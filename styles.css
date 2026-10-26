@@ -739,3 +739,137 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 .footer-arm-logo{max-width:200px;margin:0 auto}
 .footer-arm-link{font-size:.85rem;font-weight:600;color:var(--primario);text-decoration:none}
 .footer-arm-link:hover{text-decoration:underline}
+
+/* ================================================================
+   App Mi Mascota: pantalla de inicio, como se ve en el celular del dueño.
+   Todo en em: cambiar el font-size de la pantalla escala el celular entero.
+   ================================================================ */
+.phone-screen { position: relative; font-size: 8px; }
+.pa-top { display: flex; align-items: center; gap: .9em; }
+.pa-top b { flex: 1; font-family: var(--font-display); font-size: 1.55em; font-weight: 700; color: var(--tinta); }
+.pa-menu { display: flex; flex-direction: column; gap: .32em; width: 1.7em; }
+.pa-menu i { height: .22em; border-radius: 1em; background: var(--tinta); }
+.pa-user { font-size: .95em; font-weight: 600; white-space: nowrap; padding: .55em 1.1em; border-radius: 999px; background: #eef6f4; border: 1px solid var(--borde); color: var(--tinta-suave); }
+.pa-nav { position: absolute; left: 0; right: 0; bottom: 0; display: flex; justify-content: space-around; background: #fff; border-top: 1px solid var(--borde); padding: .75em .3em .85em; }
+.pa-nav span { display: flex; flex-direction: column; align-items: center; gap: .3em; font-size: .88em; font-weight: 600; color: var(--tinta-suave); }
+.pa-nav i { display: grid; place-items: center; width: 3.6em; height: 2.3em; border-radius: 999px; }
+.pa-nav i svg { width: 1.7em; height: 1.7em; }
+.pa-nav .on { color: var(--primario-800); }
+.pa-nav .on i { background: var(--primario-100); color: var(--primario); }
+
+.app-screen { background: #f3f8f7; padding: 3.7em 1.25em 1.25em; gap: 1.1em; min-height: 0; }
+.pa-hola b { display: block; font-family: var(--font-display); font-size: 2.1em; font-weight: 700; line-height: 1.15; }
+.pa-hola small { display: block; font-size: 1.05em; color: var(--tinta-suave); margin-top: .15em; }
+.pa-sos { background: #d64545; color: #fff; font-weight: 700; font-size: 1.15em; text-align: center; padding: .9em .5em; border-radius: .9em; }
+.pa-conectar { border: 1px dashed #8fcfc5; background: #f2fbf9; border-radius: 1.1em; padding: .95em 1em .8em; font-size: 1em; line-height: 1.4; color: var(--tinta-suave); }
+.pa-conectar p { margin: 0; }
+.pa-conectar b { color: var(--tinta); }
+.pa-conectar em { display: block; text-align: right; font-style: normal; font-weight: 700; color: var(--primario-600); margin-top: .45em; }
+.pa-accesos { display: grid; grid-template-columns: repeat(4, 1fr); gap: .7em; }
+.pa-accesos span { display: flex; flex-direction: column; align-items: center; gap: .55em; padding: .75em .15em .65em; min-height: 7.4em; background: #fff; border: 1px solid var(--borde); border-radius: 1em; font-size: .88em; font-weight: 600; line-height: 1.2; text-align: center; color: var(--tinta); }
+.pa-accesos i { display: grid; place-items: center; width: 2.9em; height: 2.9em; border-radius: .95em; background: #d8eeea; font-style: normal; font-size: 1.85em; line-height: 1; }
+.pa-sec { display: flex; justify-content: space-between; align-items: baseline; margin-top: .3em; }
+.pa-sec b { font-family: var(--font-display); font-size: 1.4em; font-weight: 700; }
+.pa-sec em { font-style: normal; font-size: .95em; font-weight: 700; color: var(--primario-600); }
+.pa-pet { display: flex; gap: 1.1em; background: #fff; border: 1px solid var(--borde); border-radius: 1.3em; padding: 1.1em; box-shadow: var(--sombra); }
+.pa-foto { flex: none; display: grid; place-items: center; width: 6.2em; height: 7.4em; border-radius: 1em; background: linear-gradient(160deg, #fbe3bd, #e9b27a); }
+.pa-foto b { font-size: 3.4em; line-height: 1; }
+.pa-pet-info { min-width: 0; flex: 1; }
+.pa-pet-info > b { display: block; font-family: var(--font-display); font-size: 1.55em; line-height: 1.1; }
+.pa-pet-info > small { display: block; font-size: 1em; color: var(--tinta-suave); }
+.pa-datos { display: grid; grid-template-columns: 1fr 1fr; gap: .7em .6em; margin-top: .9em; }
+.pa-datos small { display: block; font-size: .72em; font-weight: 600; letter-spacing: .04em; color: var(--tinta-tenue); }
+.pa-datos b { font-size: 1.05em; line-height: 1.2; }
+
+.hero-visual { min-height: 540px; }
+.hero .mock-phone.app { left: -56px; bottom: -64px; width: 236px; }
+.hero .app-screen { height: 480px; }
+.phones .phone-screen { font-size: 7px; padding-bottom: 6.6em; }
+
+/* ================================================================
+   Tipos de negocio, peluquería, veterinario a domicilio y planes por tipo
+   ================================================================ */
+.tipo-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+.tipo-card { display: flex; flex-direction: column; background: #fff; border: 1px solid var(--borde); border-radius: 24px; padding: 30px 26px; transition: transform .2s, box-shadow .2s; }
+.tipo-card:hover { transform: translateY(-4px); box-shadow: var(--sombra); }
+.tipo-ic { display: grid; place-items: center; width: 50px; height: 50px; border-radius: 14px; background: var(--degradado); color: #fff; margin-bottom: 18px; }
+.tipo-ic svg { width: 25px; height: 25px; }
+.tipo-card h3 { font-size: 24px; }
+.tipo-for { margin-top: 6px; font-size: 14.5px; color: var(--tinta-suave); }
+.tipo-list { display: flex; flex-direction: column; gap: 10px; margin: 20px 0 24px; flex: 1; }
+.tipo-list li { position: relative; padding-left: 28px; font-size: 15px; }
+.tipo-list li::before {
+  content: ""; position: absolute; left: 0; top: 3px; width: 18px; height: 18px; border-radius: 50%;
+  background: var(--primario-100) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='none' stroke='%230d9488' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5.5 10.5l3 3 6-7'/%3E%3C/svg%3E") center/12px no-repeat;
+}
+.tipo-link { font-weight: 700; font-size: 15px; color: var(--primario-600); }
+.tipo-link:hover { color: var(--primario-800); }
+
+.tag { display: inline-block; font-style: normal; font-size: 12px; font-weight: 700; padding: 2px 10px; border-radius: 999px; }
+.tag.ok { background: #e9f8ee; color: #15803d; }
+.pref-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.pref-grid > div { background: var(--fondo-suave); border-radius: 12px; padding: 10px 12px; }
+.pref-grid small, .pref-tam small { display: block; font-size: 11.5px; color: var(--tinta-tenue); }
+.pref-grid b { font-size: 14px; }
+.pref-tam { margin-top: 14px; }
+.tam-row { display: flex; gap: 6px; margin: 8px 0; }
+.tam-row span { flex: 1; text-align: center; font-size: 12px; font-weight: 600; border: 1px solid var(--borde); border-radius: 9px; padding: 7px 0; }
+.tam-row .on { background: var(--primario); border-color: var(--primario); color: #fff; }
+.pref-tam .tam-nota { font-size: 12px; }
+
+#domicilio .hl { margin-top: 56px; }
+.ruta-row { display: grid; grid-template-columns: 44px 1fr auto; align-items: center; gap: 10px; padding: 10px 12px; border-radius: 12px; background: var(--fondo-suave); border: 1px solid transparent; }
+.ruta-row + .ruta-row { margin-top: 7px; }
+.ruta-row.now { background: var(--primario-50); border-color: var(--primario-100); }
+.ruta-row .t { color: var(--tinta-tenue); font-weight: 600; font-size: 13px; }
+.ruta-row b { display: block; font-size: 14px; }
+.ruta-row small { display: block; font-size: 12px; color: var(--tinta-suave); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.ruta-row > div { min-width: 0; }
+.ruta-btns { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-top: 14px; }
+.ruta-btns span { text-align: center; font-size: 13px; font-weight: 600; padding: 9px 4px; border: 1px solid var(--borde); border-radius: 10px; background: #fff; }
+.ruta-btns .on { background: var(--degradado); border-color: transparent; color: #fff; }
+
+.bol-head, .bol-row, .bol-tot { display: grid; grid-template-columns: 1fr 1.1fr 1.1fr 1.1fr; gap: 8px; align-items: center; font-size: 13.5px; }
+.bol-head { padding-bottom: 8px; font-size: 11px; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; color: var(--tinta-tenue); }
+.bol-row { padding: 10px 0; border-top: 1px solid var(--borde); }
+.bol-head span:not(:first-child), .bol-row span:not(:first-child), .bol-tot b { text-align: right; }
+.bol-row span:first-child { font-weight: 600; }
+.bol-tot { padding-top: 12px; border-top: 2px solid var(--borde); }
+.bol-tot span { font-weight: 700; }
+.bol-tot b { font-family: var(--font-display); font-size: 14.5px; }
+.bol-dev { display: flex; justify-content: space-between; align-items: center; gap: 10px; margin-top: 16px; padding: 11px 14px; border-radius: 12px; background: var(--primario-50); color: var(--primario-800); font-size: 13.5px; font-weight: 600; }
+.bol-dev b { font-size: 12px; padding: 3px 10px; border-radius: 999px; background: #fef5e2; color: #b45309; }
+.pelu-casos.tres { grid-template-columns: repeat(3, 1fr); }
+
+/* Planes por tipo de negocio */
+.perfil-tabs { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin: 0 auto 22px; }
+.perfil-tabs button { display: inline-flex; align-items: center; gap: 8px; font: inherit; font-weight: 600; font-size: 15px; color: var(--tinta-suave); background: #fff; border: 1px solid var(--borde); border-radius: 999px; padding: 10px 20px; }
+.perfil-tabs button i { width: 20px; height: 20px; }
+.perfil-tabs button:hover { border-color: var(--primario); }
+.perfil-tabs button.on { background: var(--primario-50); border-color: var(--primario); color: var(--primario-800); }
+.price-grid[hidden] { display: none; }
+.price-grid.solo { grid-template-columns: minmax(0, 430px); justify-content: center; }
+.price-grid.solo .price-card.featured { transform: none; }
+
+@media (max-width: 920px) {
+  .tipo-grid, .pelu-casos.tres { grid-template-columns: 1fr; max-width: 520px; margin-left: auto; margin-right: auto; }
+  .pelu-casos.tres { margin-top: 48px; }
+  #domicilio .hl { grid-template-columns: 1fr; gap: 40px; }
+  .hero-visual { min-height: 0; padding-bottom: 150px; }
+  .hero .mock-phone.app { left: auto; right: -6px; bottom: 0; width: 214px; }
+  .hero .app-screen { height: 430px; }
+}
+@media (max-width: 640px) {
+  .ruta-row { grid-template-columns: 40px 1fr; }
+  .ruta-row .st { display: none; }
+  .bol-head, .bol-row, .bol-tot { font-size: 12px; gap: 4px; }
+  .bol-tot b { font-size: 12.5px; }
+  .perfil-tabs button { padding: 9px 14px; font-size: 14px; }
+  .hero-visual { padding-bottom: 130px; }
+  .hero .mock-phone.app { right: -4px; bottom: 0; width: 178px; border-radius: 28px; padding: 7px; }
+  .hero .app-screen { height: 360px; font-size: 6px; padding-top: 4.2em; border-radius: 22px; gap: 1em; }
+  .phones .phone-screen { font-size: 6.4px; }
+}
+
+.phones .pa-nav span { font-size: .74em; }
+.phones .pa-nav i { width: 3em; }
