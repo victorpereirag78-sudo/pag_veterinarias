@@ -840,7 +840,7 @@
       <button type="button" data-periodo="anual" aria-pressed="false">Anual <em>Ahorra 2 meses</em></button>
     </div>
     <!-- Los precios se leen de la base (vet_pub_planes): los de abajo son el respaldo si no responde. -->
-    <div class="price-grid" id="planesGrid" data-perfil="clinica">
+    <div class="price-grid cuatro" id="planesGrid" data-perfil="clinica">
       <article class="price-card reveal" data-plan="basico">
         <h3 data-campo="nombre">Básico</h3>
         <p class="price-desc" data-campo="descripcion">Para consultas o profesionales independientes.</p>
@@ -872,17 +872,31 @@
       </article>
       <article class="price-card reveal" data-plan="clinica">
         <h3 data-campo="nombre">Clínica</h3>
-        <p class="price-desc" data-campo="descripcion">El plan definitivo para centros médicos y multisucursales.</p>
+        <p class="price-desc" data-campo="descripcion">Para clínicas con varias sedes y equipo grande: hasta 5 sedes y 15 usuarios.</p>
         <p class="price-amount"><span data-campo="precio">$35.990</span> <small>+ IVA / <span data-campo="unidad">mes</span></small></p>
         <p class="price-sub" data-campo="detalle">&nbsp;</p>
         <ul class="price-feats">
-          <li data-campo="sedes">Sedes ilimitadas</li>
-          <li data-campo="usuarios">Usuarios ilimitados (sin límite de equipo)</li>
+          <li data-campo="sedes">Hasta 5 sedes</li>
+          <li data-campo="usuarios">Hasta 15 usuarios</li>
           <li data-campo="almacenamiento">35 GB de almacenamiento en la nube</li>
           <li>Todas las funciones y App Mi Mascota incluidas</li>
         </ul>
         <a href="https://arm-veterinaria.pages.dev/registro" class="btn btn-outline">Probar 30 días gratis</a>
         <button type="button" class="price-link js-open-demo" data-plan="Clínica">Prefiero que me contacten</button>
+      </article>
+      <article class="price-card reveal" data-plan="clinica_plus">
+        <h3 data-campo="nombre">Clínica Plus</h3>
+        <p class="price-desc" data-campo="descripcion">Para redes de clínicas: hasta 15 sedes y 40 usuarios, con más almacenamiento.</p>
+        <p class="price-amount"><span data-campo="precio">$85.990</span> <small>+ IVA / <span data-campo="unidad">mes</span></small></p>
+        <p class="price-sub" data-campo="detalle">&nbsp;</p>
+        <ul class="price-feats">
+          <li data-campo="sedes">Hasta 15 sedes</li>
+          <li data-campo="usuarios">Hasta 40 usuarios</li>
+          <li data-campo="almacenamiento">100 GB de almacenamiento en la nube</li>
+          <li>Todas las funciones y App Mi Mascota incluidas</li>
+        </ul>
+        <a href="https://arm-veterinaria.pages.dev/registro" class="btn btn-outline">Probar 30 días gratis</a>
+        <button type="button" class="price-link js-open-demo" data-plan="Clínica Plus">Prefiero que me contacten</button>
       </article>
     </div>
 
@@ -927,9 +941,12 @@
       </article>
     </div>
     <p class="price-note reveal">
-      Precios en pesos chilenos más IVA, al valor de la fecha de contratación. Ese día el monto se convierte a UF según el valor de la UF,
-      y las mensualidades o anualidades siguientes se cobran en esa cantidad de UF, al valor de la UF del día de pago, más IVA.
-      Pago por transferencia. <span id="ufHoy"></span>
+      Precios fijos en pesos chilenos, más IVA. Se reajustan una vez al año según el IPC, y el precio con el que contratas se mantiene durante tu primer año.
+      Pago por transferencia.
+    </p>
+    <p class="price-note reveal">
+      <b>¿Necesitas más usuarios o sedes?</b> En cualquier plan puedes sumar <b>usuarios adicionales</b> a <b id="extraUsuario">$5.000</b> + IVA al mes cada uno
+      y <b>sedes adicionales</b> a <b id="extraSede">$10.000</b> + IVA al mes cada una. En el plan anual se cobran 10 meses.
     </p>
     <p class="price-note reveal">
       💡 ¿Necesitas más espacio para radiografías o ecografías? Todos nuestros planes cuentan con almacenamiento flexible y pueden ampliarse en cualquier momento según las necesidades de tu clínica.
@@ -1012,7 +1029,7 @@
       </details>
       <details>
         <summary>¿Cuánto cuesta y cómo se paga?</summary>
-        <p>Los precios de cada plan están más arriba, en pesos y más IVA. Al contratar, el monto se convierte a UF con el valor de ese día, y las mensualidades siguientes se cobran en esa cantidad de UF, al valor de la UF del día de pago, más IVA. Pagas por transferencia, mensual o anual, y lo informas desde el mismo sistema.</p>
+        <p>Los precios de cada plan están más arriba, en pesos chilenos y más IVA, y son fijos: se reajustan una vez al año según el IPC, y el precio con el que contratas se mantiene durante tu primer año. Si necesitas más usuarios o sedes que los de tu plan, puedes sumarlos por un valor mensual cada uno. Pagas por transferencia, mensual o anual, y lo informas desde el mismo sistema.</p>
       </details>
       <details>
         <summary>¿Qué pasa cuando terminan los 30 días de prueba?</summary>
@@ -1196,6 +1213,7 @@
             <option>Básico</option>
             <option>Profesional</option>
             <option>Clínica</option>
+            <option>Clínica Plus</option>
             <option>Peluquería</option>
             <option>Veterinario a domicilio</option>
             <option selected>Aún no lo sé</option>

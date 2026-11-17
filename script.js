@@ -200,14 +200,14 @@ const SUPABASE_URL = 'https://rhggndoqjnlzmfxsllto.supabase.co';
 const SUPABASE_ANON = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJoZ2duZG9xam5sem1meHNsbHRvIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzgwNDE5MTIsImV4cCI6MjA5MzYxNzkxMn0.sEJIK0dtWsjwf_KUBII_QQYWuoLUvoNTGXxUUEzwhCE';
 
 const clp = (n) => '$' + Math.round(n).toLocaleString('es-CL');
-const ufTxt = (n) => n.toLocaleString('es-CL', { minimumFractionDigits: 2, maximumFractionDigits: 4 }) + ' UF';
 // Respaldo (los mismos valores del HTML) mientras responde la base o si falla.
 let datosPlanes = {
-  iva_pct: 19, uf: null,
+  iva_pct: 19, extras: { sede: 10000, usuario: 5000 },
   planes: [
     { codigo: 'basico', nombre: 'Básico', precio_mensual: 15990, precio_anual: 159900, max_sucursales: 1, max_usuarios: 2 },
     { codigo: 'profesional', nombre: 'Profesional', precio_mensual: 22990, precio_anual: 229900, max_sucursales: 2, max_usuarios: 8 },
-    { codigo: 'clinica', nombre: 'Clínica', precio_mensual: 35990, precio_anual: 359900, max_sucursales: null, max_usuarios: null },
+    { codigo: 'clinica', nombre: 'Clínica', precio_mensual: 35990, precio_anual: 359900, max_sucursales: 5, max_usuarios: 15 },
+    { codigo: 'clinica_plus', nombre: 'Clínica Plus', precio_mensual: 85990, precio_anual: 859900, max_sucursales: 15, max_usuarios: 40, max_storage_mb: 102400 },
     { codigo: 'peluqueria', nombre: 'Peluquería', precio_mensual: 9990, precio_anual: 99900, max_sucursales: 1, max_usuarios: 3 },
     { codigo: 'movil', nombre: 'Veterinario a domicilio', precio_mensual: 14990, precio_anual: 149900, max_sucursales: 1, max_usuarios: 2 },
   ],
@@ -215,7 +215,7 @@ let datosPlanes = {
 let periodo = 'mensual';
 
 const pintarPlanes = () => {
-  const { planes, iva_pct: iva, uf } = datosPlanes;
+  const { planes, iva_pct: iva, extras } = datosPlanes;
   planes.forEach((p) => {
     const card = document.querySelector(`.price-card[data-plan="${p.codigo}"]`);
     if (!card) return;
@@ -226,7 +226,7 @@ const pintarPlanes = () => {
     if (p.descripcion) set('descripcion', p.descripcion);
     set('precio', clp(neto));
     set('unidad', periodo === 'anual' ? 'año' : 'mes');
-    set('detalle', `${clp(total)} IVA incluido${uf ? ` · ${ufTxt(neto / uf.valor)} hoy` : ''}`);
+    set('detalle', `${clp(total)} IVA incluido`);
     set('sedes', p.max_sucursales == null ? 'Sedes ilimitadas' : p.max_sucursales === 1 ? '1 sede' : `Hasta ${p.max_sucursales} sedes`);
     set('usuarios', p.max_usuarios == null ? 'Usuarios ilimitados (sin límite de equipo)' : `Hasta ${p.max_usuarios} usuarios`);
     if (p.max_storage_mb) {
@@ -234,10 +234,11 @@ const pintarPlanes = () => {
       set('almacenamiento', `${gb} GB de almacenamiento en la nube`);
     }
   });
-  const ufHoy = document.getElementById('ufHoy');
-  if (ufHoy && uf) {
-    const [a, m, d] = uf.fecha.split('-');
-    ufHoy.textContent = `Valor UF al ${d}-${m}-${a}: $${Number(uf.valor).toLocaleString('es-CL', { minimumFractionDigits: 2 })}.`;
+  if (extras) {
+    const u = document.getElementById('extraUsuario');
+    const sd = document.getElementById('extraSede');
+    if (u && extras.usuario != null) u.textContent = clp(extras.usuario);
+    if (sd && extras.sede != null) sd.textContent = clp(extras.sede);
   }
   // "2 meses gratis" solo si el anual realmente lo es (según el primer plan).
   const p0 = planes[0];
