@@ -249,17 +249,7 @@ const pintarPlanes = () => {
   }
 };
 
-// Tipo de negocio: muestra los planes de la clínica, la peluquería o el veterinario a domicilio.
-const mostrarPerfil = (perfil) => {
-  document.querySelectorAll('.perfil-tabs button').forEach((x) => {
-    const activo = x.dataset.perfil === perfil;
-    x.classList.toggle('on', activo);
-    x.setAttribute('aria-pressed', String(activo));
-  });
-  document.querySelectorAll('.price-grid[data-perfil]').forEach((g) => { g.hidden = g.dataset.perfil !== perfil; });
-};
-document.querySelectorAll('.perfil-tabs button').forEach((b) => b.addEventListener('click', () => mostrarPerfil(b.dataset.perfil)));
-document.querySelectorAll('[data-ver-planes]').forEach((a) => a.addEventListener('click', () => mostrarPerfil(a.dataset.verPlanes)));
+// Los planes de clínica, peluquería y veterinario a domicilio se muestran todos a la vista, uno debajo del otro.
 
 document.querySelectorAll('.periodo button').forEach((b) => {
   b.addEventListener('click', () => {

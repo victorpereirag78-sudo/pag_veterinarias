@@ -855,9 +855,13 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 .perfil-tabs button.on { background: var(--primario-50); border-color: var(--primario); color: var(--primario-800); }
 .price-grid[hidden] { display: none; }
 .price-grid.solo { grid-template-columns: minmax(0, 430px); justify-content: center; }
+.price-grid.duo { grid-template-columns: repeat(2, minmax(0, 1fr)); max-width: 820px; margin: 0 auto; }
+.plan-grupo { display: flex; align-items: center; justify-content: center; gap: 10px; margin: 44px 0 26px; font-size: 20px; color: var(--primario-800); }
+.plan-grupo i { width: 24px; height: 24px; }
 .price-grid.solo .price-card.featured { transform: none; }
 
 @media (max-width: 920px) {
+  .price-grid.cuatro, .price-grid.duo { grid-template-columns: 1fr; max-width: 480px; margin-left: auto; margin-right: auto; }
   .tipo-grid, .pelu-casos.tres { grid-template-columns: 1fr; max-width: 520px; margin-left: auto; margin-right: auto; }
   .pelu-casos.tres { margin-top: 48px; }
   #domicilio .hl { grid-template-columns: 1fr; gap: 40px; }

@@ -830,17 +830,13 @@
       <h2>Un plan para cada tipo de negocio.</h2>
       <p class="section-lead">Elige el tuyo: todas las funciones de tu tipo de negocio vienen en cada plan, y Mi Mascota para tus clientes siempre incluida. Pruébalo 30 días gratis.</p>
     </div>
-    <div class="perfil-tabs reveal" role="group" aria-label="Tipo de negocio">
-      <button type="button" class="on" data-perfil="clinica" aria-pressed="true"><i data-icon="hospital"></i>Clínica</button>
-      <button type="button" data-perfil="peluqueria" aria-pressed="false"><i data-icon="tijera"></i>Peluquería</button>
-      <button type="button" data-perfil="movil" aria-pressed="false"><i data-icon="ruta"></i>Veterinario a domicilio</button>
-    </div>
     <div class="periodo reveal" role="group" aria-label="Período de pago">
       <button type="button" class="on" data-periodo="mensual" aria-pressed="true">Mensual</button>
       <button type="button" data-periodo="anual" aria-pressed="false">Anual <em>Ahorra 2 meses</em></button>
     </div>
     <!-- Los precios se leen de la base (vet_pub_planes): los de abajo son el respaldo si no responde. -->
-    <div class="price-grid cuatro" id="planesGrid" data-perfil="clinica">
+    <h3 class="plan-grupo reveal"><i data-icon="hospital"></i>Clínicas veterinarias</h3>
+    <div class="price-grid cuatro" id="planesGrid">
       <article class="price-card reveal" data-plan="basico">
         <h3 data-campo="nombre">Básico</h3>
         <p class="price-desc" data-campo="descripcion">Para consultas o profesionales independientes.</p>
@@ -900,8 +896,9 @@
       </article>
     </div>
 
-    <div class="price-grid solo" data-perfil="peluqueria" hidden>
-      <article class="price-card featured reveal" data-plan="peluqueria">
+    <h3 class="plan-grupo reveal"><i data-icon="tijera"></i>Peluquerías y veterinarios a domicilio</h3>
+    <div class="price-grid duo">
+      <article class="price-card reveal" data-plan="peluqueria">
         <h3 data-campo="nombre">Peluquería</h3>
         <p class="price-desc" data-campo="descripcion">Agenda de servicios, fichas con preferencias de corte, tarifas por tamaño, caja y App Mascotas. Celular y computador.</p>
         <p class="price-amount"><span data-campo="precio">$9.990</span> <small>+ IVA / <span data-campo="unidad">mes</span></small></p>
@@ -918,10 +915,7 @@
         <a href="https://arm-veterinaria.pages.dev/registro" class="btn btn-primary">Probar 30 días gratis</a>
         <button type="button" class="price-link js-open-demo" data-plan="Peluquería">Prefiero que me contacten</button>
       </article>
-    </div>
-
-    <div class="price-grid solo" data-perfil="movil" hidden>
-      <article class="price-card featured reveal" data-plan="movil">
+      <article class="price-card reveal" data-plan="movil">
         <h3 data-campo="nombre">Veterinario a domicilio</h3>
         <p class="price-desc" data-campo="descripcion">Agenda y ruta del día, ficha clínica, recordatorios de vacunas, ingresos y boletas de honorarios. Celular y computador.</p>
         <p class="price-amount"><span data-campo="precio">$14.990</span> <small>+ IVA / <span data-campo="unidad">mes</span></small></p>
