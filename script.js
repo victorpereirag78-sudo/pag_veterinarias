@@ -208,7 +208,7 @@ let datosPlanes = {
     { codigo: 'profesional', nombre: 'Profesional', precio_mensual: 22990, precio_anual: 229900, max_sucursales: 2, max_usuarios: 8 },
     { codigo: 'clinica', nombre: 'Clínica', precio_mensual: 35990, precio_anual: 359900, max_sucursales: 5, max_usuarios: 15 },
     { codigo: 'clinica_plus', nombre: 'Clínica Plus', precio_mensual: 85990, precio_anual: 859900, max_sucursales: 15, max_usuarios: 40, max_storage_mb: 102400 },
-    { codigo: 'peluqueria', nombre: 'Peluquería', precio_mensual: 9990, precio_anual: 99900, max_sucursales: 1, max_usuarios: 3 },
+    { codigo: 'peluqueria', nombre: 'Peluquería y servicios', precio_mensual: 9990, precio_anual: 99900, max_sucursales: 1, max_usuarios: 3 },
     { codigo: 'movil', nombre: 'Veterinario a domicilio', precio_mensual: 14990, precio_anual: 149900, max_sucursales: 1, max_usuarios: 2 },
   ],
 };
